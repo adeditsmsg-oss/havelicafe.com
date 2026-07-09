@@ -3,7 +3,7 @@
 :root {
   --background: #FFFFFF;
   --foreground: #000000;
-  --brand-yellow: #FFC107;
+  --brand-yellow: #FF9800;
   --brand-burgundy: #000000; /* Strict Black in Day Mode (Zero Burgundy/Brown) */
   --brand-cream: #FFFFFF;    /* Clean White in Day Mode */
   --brand-dark: #000000;
@@ -14,11 +14,11 @@
   :root {
     --background: #000000;
     --foreground: #FFFFFF;
-    --brand-yellow: #FFC107;
-    --brand-burgundy: #FFC107; /* Glowing Yellow in Night Mode */
+    --brand-yellow: #FF9800;
+    --brand-burgundy: #FF9800; /* Glowing Yellow in Night Mode */
     --brand-cream: #000000;    /* Deep Black in Night Mode */
     --brand-dark: #FFFFFF;     /* Clean White in Night Mode */
-    --brand-green: #FFC107;
+    --brand-green: #FF9800;
   }
 }
 

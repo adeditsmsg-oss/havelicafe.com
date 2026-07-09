@@ -4,25 +4,25 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Star, Flame, Award, Heart } from 'lucide-react';
-import { menuItems, MenuItem } from '../data/menuData';
+import { menuItems } from '../data/menuData';
 
 export default function FeaturedDishes() {
-  // Highlighted food items extracted based on Google Maps reviews analysis
+  // Highlighted food items extracted based on Google Reviews
   const featuredIds = ['rolls-1', 'starter-1', 'coffee-1', 'combo-1'];
   const featuredFoods = menuItems.filter((item) => featuredIds.includes(item.id));
 
   const getBadge = (id: string) => {
     switch (id) {
       case 'rolls-1':
-        return { text: 'Bestseller', icon: <Flame className="w-3.5 h-3.5" />, color: 'bg-orange-600 text-white' };
+        return { text: 'Bestseller', icon: <Flame className="w-3 h-3" />, color: 'bg-orange-600 text-white' };
       case 'starter-1':
-        return { text: 'Highest Rated', icon: <Star className="w-3.5 h-3.5 fill-current" />, color: 'bg-yellow-500 text-brand-dark' };
+        return { text: 'Highest Rated', icon: <Star className="w-3 h-3 fill-current" />, color: 'bg-brand-yellow text-black' };
       case 'coffee-1':
-        return { text: 'Customer Favourite', icon: <Heart className="w-3.5 h-3.5 fill-current" />, color: 'bg-pink-600 text-white' };
+        return { text: 'Customer Favourite', icon: <Heart className="w-3 h-3 fill-current" />, color: 'bg-pink-600 text-white' };
       case 'combo-1':
-        return { text: 'Most Ordered', icon: <Award className="w-3.5 h-3.5" />, color: 'bg-brand-burgundy text-brand-yellow dark:text-black' };
+        return { text: 'Most Ordered', icon: <Award className="w-3 h-3" />, color: 'bg-black text-brand-yellow' };
       default:
-        return { text: 'Special', icon: <Star className="w-3.5 h-3.5" />, color: 'bg-brand-burgundy text-white' };
+        return { text: 'Special', icon: <Star className="w-3 h-3" />, color: 'bg-black text-white' };
     }
   };
 
@@ -30,12 +30,13 @@ export default function FeaturedDishes() {
     <section className="py-20 bg-brand-cream relative overflow-hidden" id="featured">
       {/* Subtle organic background decoration */}
       <div className="absolute top-20 right-0 w-64 h-64 rounded-full bg-brand-yellow/10 blur-3xl -z-10" />
-      <div className="absolute bottom-10 left-0 w-80 h-80 rounded-full bg-brand-burgundy/5 blur-3xl -z-10" />
+      <div className="absolute bottom-10 left-0 w-80 h-80 rounded-full bg-brand-yellow/5 blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="font-sans font-bold text-xs uppercase tracking-widest text-brand-burgundy bg-brand-burgundy/5 px-4 py-1.5 rounded-full">
+          <span className="font-sans font-bold text-xs uppercase tracking-widest text-brand-burgundy bg-brand-burgundy/5 px-4 py-1.5 rounded-full inline-block">
             Special Selection • বিশেষ আয়োজন
           </span>
           <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-brand-burgundy leading-tight">
@@ -58,55 +59,49 @@ export default function FeaturedDishes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-brand-cream rounded-3xl overflow-hidden border border-brand-burgundy/5 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-brand-burgundy/5 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
               >
-                {/* Image Section */}
-                <div className="relative aspect-square overflow-hidden bg-brand-cream">
-                  <Image
-                    src={food.image}
-                    alt={food.nameEn}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Floating Highlight Badge */}
-                  <div className={`absolute top-4 left-4 flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-bold shadow-md ${badge.color}`}>
-                    {badge.icon}
-                    <span>{badge.text}</span>
-                  </div>
+                {/* Full Card Image Background */}
+                <Image
+                  src={food.image}
+                  alt={food.nameEn}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
 
-                  {/* Price Tag */}
-                  <div className="absolute bottom-4 right-4 bg-black text-brand-yellow font-bold px-3.5 py-1.5 rounded-xl text-sm shadow-md">
-                    ₹{food.price}
-                  </div>
+                {/* Bottom Shadow Gradient Overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10" />
+
+                {/* Floating Category/Highlight Badge (Top Left) */}
+                <div className={`absolute top-4 left-4 flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold shadow-md z-20 ${badge.color}`}>
+                  {badge.icon}
+                  <span>{badge.text}</span>
                 </div>
 
-                {/* Content Section */}
-                <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-serif font-bold text-lg text-brand-burgundy leading-snug group-hover:text-brand-burgundy/90 transition-colors">
-                      {food.nameEn}
-                    </h3>
-                    <h4 className="font-sans font-bold text-xs text-brand-dark/70 leading-none">
-                      {food.nameBn}
-                    </h4>
-                    <p className="font-sans text-xs text-brand-dark/60 leading-relaxed font-medium line-clamp-2">
-                      {food.descriptionEn}
-                    </p>
+                {/* Text Content Overlay (Bottom Left) */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 z-20 text-white flex flex-col justify-end space-y-1">
+                  
+                  {/* Veg / Non-Veg Indicator Dot */}
+                  <div className="flex items-center space-x-1.5 mb-0.5">
+                    <span className={`w-2.5 h-2.5 rounded-full ${food.isVeg ? 'bg-green-500' : 'bg-red-500'} inline-block`} />
+                    <span className="text-[10px] font-extrabold tracking-wider uppercase opacity-90">
+                      {food.isVeg ? 'Veg' : 'Non-Veg'}
+                    </span>
                   </div>
 
-                  {/* Rating / Review Tag */}
-                  <div className="pt-3 border-t border-brand-cream flex items-center justify-between text-xs text-brand-dark/60 font-semibold">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-3.5 h-3.5 fill-brand-yellow text-brand-yellow" />
-                      <span className="font-bold text-brand-dark">4.8</span>
-                      <span>(Review Choice)</span>
-                    </div>
-                    <a
-                      href="#menu"
-                      className="text-brand-burgundy hover:underline flex items-center space-x-0.5"
-                    >
-                      Order Now
-                    </a>
+                  {/* Title En */}
+                  <h3 className="font-sans font-black text-base md:text-lg text-white leading-tight">
+                    {food.nameEn}
+                  </h3>
+
+                  {/* Title Bn */}
+                  <h4 className="font-sans text-[11px] text-white/80 font-bold leading-none">
+                    {food.nameBn}
+                  </h4>
+
+                  {/* Price */}
+                  <div className="font-sans font-extrabold text-sm md:text-base text-brand-yellow pt-1">
+                    ₹{food.price}
                   </div>
                 </div>
               </motion.div>
