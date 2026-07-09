@@ -145,7 +145,7 @@ Thank you for helping us improve!`;
                             value={formData.name}
                             onChange={handleFormChange}
                             placeholder="Enter full name"
-                            className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
+                            className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
                           />
                         </div>
                         <div>
@@ -157,7 +157,7 @@ Thank you for helping us improve!`;
                             value={formData.phone}
                             onChange={handleFormChange}
                             placeholder="Enter 10-digit mobile number"
-                            className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
+                            className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
                           />
                         </div>
                       </div>
@@ -168,7 +168,7 @@ Thank you for helping us improve!`;
                           name="issue"
                           value={formData.issue}
                           onChange={handleFormChange}
-                          className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
+                          className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
                         >
                           <option value="Food Quality">Food Quality & Taste (খাবারের স্বাদ)</option>
                           <option value="Service Speed">Service Speed (পরিবেশনের গতি)</option>
@@ -188,13 +188,13 @@ Thank you for helping us improve!`;
                           value={formData.suggestion}
                           onChange={handleFormChange}
                           placeholder="Tell us what went wrong and how we can make it right..."
-                          className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
+                          className="w-full px-4 py-3 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-burgundy/50 text-sm font-semibold"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full py-4 rounded-xl bg-brand-burgundy text-brand-yellow font-bold text-sm hover:bg-brand-burgundy/90 transition-colors flex items-center justify-center space-x-2 shadow-md hover-lift"
+                        className="w-full py-4 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-sm hover:bg-brand-burgundy/90 transition-colors flex items-center justify-center space-x-2 shadow-md hover-lift"
                       >
                         <Send className="w-4 h-4" />
                         <span>Send Feedback via WhatsApp (মতামত পাঠান)</span>

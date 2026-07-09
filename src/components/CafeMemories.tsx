@@ -73,8 +73,8 @@ export default function CafeMemories() {
               onClick={() => setFilter(btn.id as any)}
               className={`px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${
                 filter === btn.id
-                  ? 'bg-brand-burgundy text-brand-yellow shadow-md'
-                  : 'bg-white text-brand-dark/80 border border-brand-burgundy/5 hover:bg-brand-burgundy/5'
+                  ? 'bg-brand-burgundy text-brand-yellow dark:text-black shadow-md'
+                  : 'bg-white dark:bg-brand-cream text-brand-dark/80 border border-brand-burgundy/5 hover:bg-brand-burgundy/5'
               }`}
             >
               <span className="flex flex-col items-center">

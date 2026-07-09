@@ -37,7 +37,7 @@ export default function StickyCTA() {
       {/* Call Now (Medium Size Button) */}
       <a
         href="tel:+918248481654"
-        className="bg-brand-burgundy text-brand-yellow font-bold py-3 px-4 rounded-xl flex-1 flex items-center justify-center gap-2 text-sm shadow-md"
+        className="bg-brand-burgundy text-brand-yellow dark:text-black font-bold py-3 px-4 rounded-xl flex-1 flex items-center justify-center gap-2 text-sm shadow-md"
       >
         <Phone className="w-4 h-4 fill-current" />
         <span>Call Now</span>

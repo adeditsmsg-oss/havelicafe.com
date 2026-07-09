@@ -124,7 +124,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/35 text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
                     />
                     <input
                       type="tel"
@@ -133,7 +133,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/35 text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
                     />
                   </div>
                   <textarea
@@ -143,11 +143,11 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Message..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/35 text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                    className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
                   />
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-yellow font-bold text-xs hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-1.5 shadow-sm hover-lift"
+                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-xs hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-1.5 shadow-sm hover-lift"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Send Message (বার্তা পাঠান)</span>

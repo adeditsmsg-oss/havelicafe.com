@@ -82,7 +82,7 @@ export default function Navigation() {
               </a>
               <a
                 href="#reserve"
-                className="px-5 py-2.5 rounded-xl bg-brand-burgundy text-brand-yellow font-semibold text-sm hover-lift shadow-md hover:shadow-lg transition-all"
+                className="px-5 py-2.5 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-semibold text-sm hover-lift shadow-md hover:shadow-lg transition-all"
               >
                 Reserve Table
               </a>
@@ -98,7 +98,7 @@ export default function Navigation() {
               </a>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-xl bg-brand-burgundy text-brand-yellow hover:bg-brand-burgundy/90 transition-colors focus:outline-none"
+                className="p-2 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black hover:bg-brand-burgundy/90 transition-colors focus:outline-none"
               >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -136,7 +136,7 @@ export default function Navigation() {
                   <a
                     href="#reserve"
                     onClick={() => setIsOpen(false)}
-                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-yellow font-bold text-center shadow-md text-sm"
+                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-center shadow-md text-sm"
                   >
                     Reserve Table (টেবিল বুকিং)
                   </a>

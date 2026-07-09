@@ -93,7 +93,7 @@ export default function Reservation() {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Sayantan Mukherjee"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                       />
                     </div>
                     <div>
@@ -105,7 +105,7 @@ export default function Reservation() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="9876543210"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                       />
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default function Reservation() {
                           required
                           value={formData.date}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                         />
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export default function Reservation() {
                           name="time"
                           value={formData.time}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                         >
                           <option value="11:30">11:30 AM</option>
                           <option value="13:00">1:00 PM</option>
@@ -151,7 +151,7 @@ export default function Reservation() {
                           name="guests"
                           value={formData.guests}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                         >
                           <option value="1">1 Person</option>
                           <option value="2">2 People (Couple Seating)</option>
@@ -172,13 +172,13 @@ export default function Reservation() {
                       value={formData.note}
                       onChange={handleInputChange}
                       placeholder="E.g., Birthday celebration setting, window table, extra mild spicy food..."
-                      className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                      className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-brand-burgundy text-brand-yellow font-bold text-sm hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-2 shadow-md hover-lift"
+                    className="w-full py-4 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-sm hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-2 shadow-md hover-lift"
                   >
                     <span>Request Booking (টেবিল বুকিং করুন)</span>
                   </button>

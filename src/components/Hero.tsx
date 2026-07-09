@@ -84,7 +84,7 @@ export default function Hero() {
             >
               <a
                 href="#menu"
-                className="px-8 py-4 rounded-full bg-brand-burgundy text-brand-yellow font-bold text-base hover-lift shadow-lg hover:shadow-brand-burgundy/20 transition-all flex items-center space-x-2 border border-transparent dark:border-brand-yellow/20"
+                className="px-8 py-4 rounded-full bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-base hover-lift shadow-lg hover:shadow-brand-burgundy/20 transition-all flex items-center space-x-2 border border-transparent dark:border-brand-yellow/20"
               >
                 <span>Explore Menu (মেনু দেখুন)</span>
                 <ArrowRight className="w-4 h-4" />
@@ -154,7 +154,7 @@ export default function Hero() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
               {/* Badge overlay on image */}
-              <div className="absolute top-4 right-4 bg-brand-burgundy text-brand-yellow font-bold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md z-10 tracking-wider">
+              <div className="absolute top-4 right-4 bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md z-10 tracking-wider">
                 Bestseller Wrap ⭐
               </div>
             </motion.div>

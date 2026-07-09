@@ -40,7 +40,7 @@ export default function DigitalMenu() {
             href="https://adeditsmsg-oss.github.io/haveli-cafe-menu/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-3 px-8 md:px-12 py-5 rounded-2xl bg-brand-burgundy text-brand-yellow dark:border dark:border-brand-yellow/20 font-black text-lg md:text-xl shadow-xl hover:shadow-brand-yellow/10 transition-all duration-300 hover:scale-105 hover-lift"
+            className="inline-flex items-center space-x-3 px-8 md:px-12 py-5 rounded-2xl bg-brand-burgundy text-brand-yellow dark:text-black dark:border dark:border-brand-yellow/20 font-black text-lg md:text-xl shadow-xl hover:shadow-brand-yellow/10 transition-all duration-300 hover:scale-105 hover-lift"
           >
             <BookOpen className="w-5 h-5 fill-current" />
             <span>View Full Menu (সম্পূর্ণ মেনু দেখুন)</span>

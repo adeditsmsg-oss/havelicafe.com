@@ -46,7 +46,7 @@ export default function TrustBar() {
                 {item.icon}
               </div>
               <div className="flex flex-col">
-                <span className="font-sans font-bold text-sm md:text-base tracking-wide text-brand-yellow">
+                <span className="font-sans font-bold text-sm md:text-base tracking-wide text-brand-yellow dark:text-brand-cream">
                   {item.titleEn}
                 </span>
                 <span className="font-sans font-semibold text-xs md:text-sm text-brand-cream/90">

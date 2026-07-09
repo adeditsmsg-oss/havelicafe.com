@@ -20,7 +20,7 @@ export default function FeaturedDishes() {
       case 'coffee-1':
         return { text: 'Customer Favourite', icon: <Heart className="w-3.5 h-3.5 fill-current" />, color: 'bg-pink-600 text-white' };
       case 'combo-1':
-        return { text: 'Most Ordered', icon: <Award className="w-3.5 h-3.5" />, color: 'bg-brand-burgundy text-brand-yellow' };
+        return { text: 'Most Ordered', icon: <Award className="w-3.5 h-3.5" />, color: 'bg-brand-burgundy text-brand-yellow dark:text-black' };
       default:
         return { text: 'Special', icon: <Star className="w-3.5 h-3.5" />, color: 'bg-brand-burgundy text-white' };
     }
@@ -58,7 +58,7 @@ export default function FeaturedDishes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-3xl overflow-hidden border border-brand-burgundy/5 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="bg-white dark:bg-brand-cream rounded-3xl overflow-hidden border border-brand-burgundy/5 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
                 {/* Image Section */}
                 <div className="relative aspect-square overflow-hidden bg-brand-cream">
@@ -75,7 +75,7 @@ export default function FeaturedDishes() {
                   </div>
 
                   {/* Price Tag */}
-                  <div className="absolute bottom-4 right-4 bg-brand-dark/90 backdrop-blur-sm text-brand-yellow font-bold px-3.5 py-1.5 rounded-xl text-sm shadow-md">
+                  <div className="absolute bottom-4 right-4 bg-black text-brand-yellow font-bold px-3.5 py-1.5 rounded-xl text-sm shadow-md">
                     ₹{food.price}
                   </div>
                 </div>
