@@ -44,7 +44,7 @@ export default function Hero() {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-        className="absolute top-[8%] right-[-140px] sm:right-[-120px] md:right-[-80px] lg:right-[-20px] xl:right-[4%] w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[560px] xl:h-[560px] pointer-events-none select-none z-10 mix-blend-screen opacity-85"
+        className="absolute top-[8%] right-[-140px] sm:right-[-120px] md:right-[-80px] lg:right-[-20px] xl:right-[4%] w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[560px] xl:h-[560px] pointer-events-none select-none z-10 opacity-90"
       >
         <Image
           src="/images/pizza_header.png"

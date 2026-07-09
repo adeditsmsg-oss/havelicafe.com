@@ -11,7 +11,6 @@ import CustomerFavourites from '@/components/CustomerFavourites';
 import CafeMemories from '@/components/CafeMemories';
 import RestaurantGallery from '@/components/RestaurantGallery';
 import Reservation from '@/components/Reservation';
-import GoogleReviews from '@/components/GoogleReviews';
 import ReputationManager from '@/components/ReputationManager';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
@@ -57,9 +56,6 @@ export default function Home() {
 
         {/* 11. Reservation Form */}
         <Reservation />
-
-        {/* 12. Google Reviews Carousel (NEW) */}
-        <GoogleReviews />
 
         {/* 13. Google Review Reputation Management */}
         <ReputationManager />
