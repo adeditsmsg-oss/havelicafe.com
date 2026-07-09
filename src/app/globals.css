@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAF6;
-  --foreground: #1E1E1C;
+  --background: #FFFFFF;
+  --foreground: #000000;
   --brand-yellow: #FFC107;
-  --brand-burgundy: #7E191B;
-  --brand-cream: #FAFAF6;
-  --brand-dark: #1E1E1C;
-  --brand-green: #2E5A36;
+  --brand-burgundy: #000000; /* Strict Black in Day Mode (Zero Burgundy/Brown) */
+  --brand-cream: #FFFFFF;    /* Clean White in Day Mode */
+  --brand-dark: #000000;
+  --brand-green: #FFC107;    /* Mapped to Yellow to keep theme pure */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #FFFFFF;
+    --brand-yellow: #FFC107;
+    --brand-burgundy: #FFC107; /* Glowing Yellow in Night Mode */
+    --brand-cream: #000000;    /* Deep Black in Night Mode */
+    --brand-dark: #FFFFFF;     /* Clean White in Night Mode */
+    --brand-green: #FFC107;
+  }
 }
 
 @theme {
@@ -23,13 +35,14 @@
 }
 
 body {
-  background-color: var(--brand-cream);
-  color: var(--brand-dark);
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -45,12 +58,19 @@ html {
   scrollbar-width: none;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility updated for Yellow/White/Black theme */
 .glass-nav {
-  background: rgba(250, 250, 246, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(126, 25, 27, 0.08);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-nav {
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+  }
 }
 
 /* Custom auto-scrolling marquee animation */

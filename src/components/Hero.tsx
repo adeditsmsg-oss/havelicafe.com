@@ -7,30 +7,45 @@ import { ArrowRight, Star, Compass } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative bg-brand-yellow pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-[90vh] flex items-center">
-      {/* Scattered red flower/petal decoration elements inspired by reference design */}
-      <div className="absolute top-24 left-[10%] text-brand-burgundy/20 animate-bounce duration-1000 hidden md:block">
-        🌸
+    <section className="relative bg-brand-yellow dark:bg-black pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-[90vh] flex items-center transition-colors duration-300">
+      
+      {/* Background image overlay of the restaurant (transparent watermark style) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/exterior.jpeg"
+          alt="Haveli Cafe Storefront Background"
+          fill
+          priority
+          className="object-cover opacity-15 dark:opacity-10 dark:mix-blend-luminosity"
+        />
+        {/* Subtle overlay gradient to blend with the background color */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-yellow/90 via-brand-yellow/80 to-transparent dark:from-black dark:via-black/90 dark:to-transparent" />
       </div>
-      <div className="absolute bottom-20 left-[5%] text-brand-burgundy/25 text-xl rotate-12 hidden md:block">
-        🌺
+
+      {/* Scattered sparkles and stars decoration elements */}
+      <div className="absolute top-24 left-[10%] text-brand-yellow dark:text-brand-yellow/60 text-2xl animate-pulse duration-1000 hidden md:block z-10">
+        ✨
       </div>
-      <div className="absolute top-40 right-[40%] text-brand-burgundy/15 text-lg hidden md:block">
-        🌸
+      <div className="absolute bottom-20 left-[5%] text-brand-yellow dark:text-brand-yellow/40 text-xl rotate-12 hidden md:block z-10">
+        ⭐
       </div>
-      <div className="absolute bottom-16 right-[10%] text-brand-burgundy/30 text-2xl animate-pulse hidden md:block">
-        🌺
+      <div className="absolute top-40 right-[40%] text-brand-yellow dark:text-brand-yellow/30 text-2xl hidden md:block z-10">
+        ✨
+      </div>
+      <div className="absolute bottom-16 right-[10%] text-brand-yellow dark:text-brand-yellow/50 text-2xl animate-bounce hidden md:block z-10">
+        ⭐
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
           {/* Left Text Column */}
           <div className="lg:col-span-6 flex flex-col space-y-6 text-brand-dark">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center space-x-2 bg-brand-burgundy/10 px-4 py-1.5 rounded-full text-brand-burgundy font-semibold text-xs tracking-wider uppercase max-w-fit"
+              className="inline-flex items-center space-x-2 bg-brand-burgundy/10 dark:bg-brand-yellow/10 px-4 py-1.5 rounded-full text-brand-burgundy font-semibold text-xs tracking-wider uppercase max-w-fit"
             >
               <Compass className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
               <span>Premium Art Cafe & Fusion Eatery</span>
@@ -69,14 +84,14 @@ export default function Hero() {
             >
               <a
                 href="#menu"
-                className="px-8 py-4 rounded-full bg-brand-burgundy text-brand-yellow font-bold text-base hover-lift shadow-lg hover:shadow-brand-burgundy/20 transition-all flex items-center space-x-2"
+                className="px-8 py-4 rounded-full bg-brand-burgundy text-brand-yellow font-bold text-base hover-lift shadow-lg hover:shadow-brand-burgundy/20 transition-all flex items-center space-x-2 border border-transparent dark:border-brand-yellow/20"
               >
                 <span>Explore Menu (মেনু দেখুন)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#reserve"
-                className="px-8 py-4 rounded-full bg-transparent border-2 border-brand-burgundy text-brand-burgundy font-bold text-base hover:bg-brand-burgundy/5 transition-all"
+                className="px-8 py-4 rounded-full bg-transparent border-2 border-brand-burgundy text-brand-burgundy font-bold text-base hover:bg-brand-burgundy/5 transition-all dark:border-brand-yellow dark:text-brand-yellow"
               >
                 Book Table (টেবিল বুকিং)
               </a>
@@ -87,7 +102,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex items-center space-x-4 pt-4 border-t border-brand-burgundy/10 max-w-md"
+              className="flex items-center space-x-4 pt-4 border-t border-brand-burgundy/10 dark:border-brand-yellow/10 max-w-md"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -115,7 +130,7 @@ export default function Hero() {
                   ))}
                   <span className="font-bold ml-1">4.6/5</span>
                 </div>
-                <p className="text-xs text-brand-dark/70">Loved by 1000+ guests in Dharma, Midnapore</p>
+                <p className="text-xs text-brand-dark/70 dark:text-brand-dark/60">Loved by 1000+ guests in Dharma, Midnapore</p>
               </div>
             </motion.div>
           </div>
@@ -123,13 +138,13 @@ export default function Hero() {
           {/* Right Image Column (Angled/Offset styling inspired by reference design) */}
           <div className="lg:col-span-6 relative flex justify-center items-center">
             {/* Background circular sunburst */}
-            <div className="absolute w-[80%] aspect-square rounded-full bg-brand-burgundy/5 blur-3xl -z-10" />
+            <div className="absolute w-[80%] aspect-square rounded-full bg-brand-burgundy/5 dark:bg-brand-yellow/5 blur-3xl -z-10" />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
               animate={{ opacity: 1, scale: 1, rotate: 1 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="relative w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-[12px] border-brand-cream/90 hover:rotate-0 transition-transform duration-500 cursor-pointer"
+              className="relative w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-[12px] border-brand-cream/90 dark:border-brand-dark/90 hover:rotate-0 transition-transform duration-500 cursor-pointer"
             >
               <Image
                 src="/images/food_wrap_drink.jpeg"
