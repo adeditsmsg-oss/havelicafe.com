@@ -5,18 +5,21 @@ import TrustBar from '@/components/TrustBar';
 import FeaturedDishes from '@/components/FeaturedDishes';
 import OurStory from '@/components/OurStory';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import PopularMenu from '@/components/PopularMenu';
 import DigitalMenu from '@/components/DigitalMenu';
+import CustomerFavourites from '@/components/CustomerFavourites';
 import CafeMemories from '@/components/CafeMemories';
-import ReputationManager from '@/components/ReputationManager';
+import RestaurantGallery from '@/components/RestaurantGallery';
 import Reservation from '@/components/Reservation';
+import GoogleReviews from '@/components/GoogleReviews';
+import ReputationManager from '@/components/ReputationManager';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
-import StickyCTA from '@/components/StickyCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative min-h-screen flex flex-col bg-[#FFFBF0]">
       {/* Floating navigation on top */}
       <Navigation />
 
@@ -37,27 +40,36 @@ export default function Home() {
         {/* 5. Why Choose Us */}
         <WhyChooseUs />
 
-        {/* 6. Complete Digital Menu */}
+        {/* 6. Popular Menu Grid (NEW) */}
+        <PopularMenu />
+
+        {/* 7. Complete Digital Menu */}
         <DigitalMenu />
 
-        {/* 7. Cafe Memories Gallery (using real images) */}
+        {/* 8. Customer Favourites (NEW) */}
+        <CustomerFavourites />
+
+        {/* 9. Cafe Memories Gallery (using real images) */}
         <CafeMemories />
 
-        {/* 8. Google Review Reputation Management */}
-        <ReputationManager />
+        {/* 10. Restaurant Gallery (NEW) */}
+        <RestaurantGallery />
 
-        {/* 9. Reservation Form */}
+        {/* 11. Reservation Form */}
         <Reservation />
 
-        {/* 10. Frequently Asked Questions */}
+        {/* 12. Google Reviews Carousel (NEW) */}
+        <GoogleReviews />
+
+        {/* 13. Google Review Reputation Management */}
+        <ReputationManager />
+
+        {/* 14. Frequently Asked Questions */}
         <FAQ />
 
-        {/* 11. Contact & Google Map */}
+        {/* 15. Contact & Google Map */}
         <Contact />
       </main>
-
-      {/* Sticky Mobile conversion bar */}
-      <StickyCTA />
 
       {/* Site Footer */}
       <Footer />

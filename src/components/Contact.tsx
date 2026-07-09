@@ -58,7 +58,7 @@ export default function Contact() {
                   href="tel:+918248481654"
                   className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm hover-lift transition-all"
                 >
-                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm hover-lift transition-all"
                 >
-                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -89,7 +89,7 @@ export default function Contact() {
 
                 {/* Email */}
                 <div className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm">
-                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -100,7 +100,7 @@ export default function Contact() {
 
                 {/* Hours */}
                 <div className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm">
-                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -124,7 +124,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-amber/50"
                     />
                     <input
                       type="tel"
@@ -133,7 +133,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-amber/50"
                     />
                   </div>
                   <textarea
@@ -143,11 +143,11 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Message..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
+                    className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-amber/50"
                   />
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-xs hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-1.5 shadow-sm hover-lift"
+                    className="w-full py-3 rounded-xl bg-brand-burgundy text-brand-amber dark:text-black font-bold text-xs hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-1.5 shadow-sm hover-lift"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Send Message (বার্তা পাঠান)</span>

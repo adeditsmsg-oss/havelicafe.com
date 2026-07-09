@@ -130,7 +130,7 @@ export default function FAQ() {
                     >
                       <div className="px-6 py-5 space-y-3.5 bg-white text-xs sm:text-sm text-brand-dark/80 font-medium">
                         <p className="leading-relaxed">{faq.answerEn}</p>
-                        <p className="leading-relaxed text-[13px] text-brand-dark/60 border-l-2 border-brand-yellow pl-3 italic">
+                        <p className="leading-relaxed text-[13px] text-brand-dark/60 border-l-2 border-brand-amber pl-3 italic">
                           {faq.answerBn}
                         </p>
                       </div>

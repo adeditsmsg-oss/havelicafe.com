@@ -1,53 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F9FAFB;      /* Tailwind gray-50 (Page Background) */
-  --foreground: #111827;      /* Tailwind gray-900 */
-  --brand-yellow: #FF9800;    /* Material Orange (Branding Accent) */
-  --brand-burgundy: #111827;  /* Tailwind gray-900 (Headings/CTAs) */
-  --brand-cream: #FFFFFF;     /* White (Cards/Secondary Sections) */
-  --brand-dark: #4B5563;      /* Tailwind gray-600 (Body text) */
-  --brand-green: #FF9800;
-  --brand-muted: #6B7280;     /* Tailwind gray-500 (Muted text) */
-  --brand-border: #E5E7EB;    /* Tailwind gray-200 (Borders) */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --background: #111827;      /* Tailwind gray-900 (Page Background) */
-    --foreground: #F9FAFB;      /* Tailwind gray-50 */
-    --brand-yellow: #FF9800;    /* Material Orange */
-    --brand-burgundy: #F9FAFB;  /* Tailwind gray-50 (Headings/CTAs) */
-    --brand-cream: #1F2937;     /* Tailwind gray-800 (Cards/Secondary Sections) */
-    --brand-dark: #D1D5DB;      /* Tailwind gray-300 (Body text) */
-    --brand-green: #FF9800;
-    --brand-muted: #9CA3AF;     /* Tailwind gray-400 (Muted text) */
-    --brand-border: #374151;    /* Tailwind gray-700 (Borders) */
-  }
-}
-
-.dark {
-  --background: #111827;      /* Tailwind gray-900 (Page Background) */
-  --foreground: #F9FAFB;      /* Tailwind gray-50 */
-  --brand-yellow: #FF9800;    /* Material Orange */
-  --brand-burgundy: #F9FAFB;  /* Tailwind gray-50 (Headings/CTAs) */
-  --brand-cream: #1F2937;     /* Tailwind gray-800 (Cards/Secondary Sections) */
-  --brand-dark: #D1D5DB;      /* Tailwind gray-300 (Body text) */
-  --brand-green: #FF9800;
-  --brand-muted: #9CA3AF;     /* Tailwind gray-400 (Muted text) */
-  --brand-border: #374151;    /* Tailwind gray-700 (Borders) */
+  --background: #FFFBF0;       /* Warm cream */
+  --foreground: #1C1917;       /* Dark charcoal (stone-900) */
+  --brand-amber: #F59E0B;      /* Primary amber accent */
+  --brand-amber-dark: #D97706; /* Amber hover */
+  --brand-amber-light: #FEF3C7;/* Amber light bg */
+  --brand-cream: #FFFFFF;      /* Card backgrounds */
+  --brand-warm: #FFF8ED;       /* Warm section bg */
+  --brand-text: #44403C;       /* Body text (stone-700) */
+  --brand-muted: #78716C;      /* Muted text (stone-500) */
+  --brand-border: #E7E5E4;     /* Borders (stone-200) */
+  --brand-burgundy: #7C2D12;   /* Deep accent for logo/headings */
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand-yellow: var(--brand-yellow);
-  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-amber-dark: var(--brand-amber-dark);
+  --color-brand-amber-light: var(--brand-amber-light);
   --color-brand-cream: var(--brand-cream);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-green: var(--brand-green);
+  --color-brand-warm: var(--brand-warm);
+  --color-brand-text: var(--brand-text);
   --color-brand-muted: var(--brand-muted);
   --color-brand-border: var(--brand-border);
+  --color-brand-burgundy: var(--brand-burgundy);
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
 }
@@ -60,7 +38,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -76,23 +53,11 @@ html {
   scrollbar-width: none;
 }
 
-/* Glassmorphism utility updated for Orange/White/Black theme */
+/* Glassmorphism utility updated for warm cream theme */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 251, 240, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--brand-border);
-}
-
-@media (prefers-color-scheme: dark) {
-  .glass-nav {
-    background: rgba(31, 41, 55, 0.85); /* Tailwind gray-800 glassbg */
-    border-bottom: 1px solid var(--brand-border);
-  }
-}
-
-.dark .glass-nav {
-  background: rgba(31, 41, 55, 0.85);
   border-bottom: 1px solid var(--brand-border);
 }
 
@@ -117,5 +82,21 @@ html {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 .hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
 }

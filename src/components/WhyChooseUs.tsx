@@ -2,85 +2,107 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Camera, PiggyBank, Heart, Sparkles } from 'lucide-react';
+import { Flame, Palette, IndianRupee, Heart } from 'lucide-react';
+
+const features = [
+  {
+    icon: Flame,
+    titleEn: 'Freshly Prepared',
+    titleBn: 'সদ্য তৈরি',
+    descEn: 'Every dish made to order with fresh ingredients, kono frozen food noy!',
+    descBn: 'প্রতিটি পদ অর্ডারের পর তাজা উপকরণ দিয়ে রান্না করা হয়।',
+  },
+  {
+    icon: Palette,
+    titleEn: 'Insta-Worthy Decor',
+    titleBn: 'দারুণ সেলফি স্পট',
+    descEn: 'Hand-painted murals, stone walls, ar cozy corners — picture perfect!',
+    descBn: 'হাতে আঁকা মিউরাল আর পাথরের দেওয়াল — ছবি তোলার জন্য পারফেক্ট!',
+  },
+  {
+    icon: IndianRupee,
+    titleEn: 'Pocket Friendly',
+    titleBn: 'বাজেট ফ্রেন্ডলি',
+    descEn: "Premium quality at prices that won't break the bank. Starting ₹30!",
+    descBn: 'প্রিমিয়াম মানের খাবার, পকেটের ওপর চাপ নেই।',
+  },
+  {
+    icon: Heart,
+    titleEn: 'Made with Love',
+    titleBn: 'ভালোবাসায় তৈরি',
+    descEn: 'From our kitchen to your table — every plate served with care ar bhalobashar sathe.',
+    descBn: 'রান্নাঘর থেকে আপনার টেবিল — প্রতিটি প্লেটে ভালোবাসা।',
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease: 'easeOut' as any },
+  }),
+};
 
 export default function WhyChooseUs() {
-  const reasons = [
-    {
-      icon: <Camera className="w-6 h-6 text-black" />,
-      titleEn: 'Instagrammable Spot',
-      titleBn: 'দারুণ সেলফি স্পট',
-      descEn: 'From our custom DSLR girl painting to the cool cat mural, our interior is ready for your selfies and Reels.',
-      descBn: 'ডিএসএলআর গার্ল পেইন্টিং থেকে শুরু করে চশমা পরা বিড়াল - প্রতিটি কোণ ছবি তোলার জন্য একদম পারফেক্ট।'
-    },
-    {
-      icon: <PiggyBank className="w-6 h-6 text-black" />,
-      titleEn: 'Student & Pocket Friendly',
-      titleBn: 'স্টুডেন্ট ফ্রেন্ডলি দাম',
-      descEn: 'Premium taste that fits your budget. Special tea starts at ₹40 and combo meals are just ₹199!',
-      descBn: 'বাজেট ফ্রেন্ডলি দামে প্রিমিয়াম স্বাদ। চা শুরু মাত্র ৪০ টাকা থেকে আর পেটভরা কম্বো মিল জাস্ট ১৯৯ টাকায়!'
-    },
-    {
-      icon: <Heart className="w-6 h-6 text-black" />,
-      titleEn: 'Cozy Cozy Seating',
-      titleBn: 'আরামদায়ক বসার জায়গা',
-      descEn: 'Enjoy our signature tire seats, quiet couple corners, and spacious tables for family get-togethers.',
-      descBn: 'টায়ার স্টুল, নিরিবিলি কাপল কর্নার এবং ফ্যামিলি গেট-টুগেদারের জন্য বড় টেবিল।'
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-black" />,
-      titleEn: 'Always Freshly Cooked',
-      titleBn: '১০০% ফ্রেশ খাবার',
-      descEn: 'We maintain strict FSSAI hygiene standards. No pre-cooked meats or artificial colors, only fresh spices.',
-      descBn: 'কড়া হাইজিন মেনে তৈরি খাবার। কোনো আগে থেকে রান্না করা মাংস বা কৃত্রিম রং ব্যবহার করা হয় না।'
-    }
-  ];
-
   return (
-    <section className="py-20 bg-brand-cream relative overflow-hidden" id="why-us">
-      {/* Background radial blur */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-brand-yellow/5 blur-3xl -z-10" />
+    <section className="py-16 md:py-24 bg-brand-cream relative overflow-hidden" id="why-us">
+      {/* Subtle background glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-brand-amber/5 blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-14 space-y-4"
+        >
           <span className="font-sans font-bold text-xs uppercase tracking-widest text-brand-burgundy bg-brand-burgundy/5 px-4 py-1.5 rounded-full">
-            Our Key Values • আমাদের বৈশিষ্ট্য
+            Our Specialty • আমাদের বিশেষত্ব
           </span>
           <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-brand-burgundy leading-tight">
-            Why Dine at Haveli?
+            Why Choose{' '}
+            <span className="underline decoration-brand-amber/60 decoration-4 underline-offset-4">
+              Haveli?
+            </span>
           </h2>
           <p className="font-sans text-sm sm:text-base text-brand-dark/70 font-semibold max-w-xl mx-auto">
-            We offer the perfect blend of delicious fusion recipes, unique art decor, and warm Bengali hospitality.
+            More than just food — it&apos;s an experience. আমাদের কাছে এটা শুধু খাবার নয়, এটা একটা অভিজ্ঞতা।
           </p>
-        </div>
+        </motion.div>
 
-        {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((reason, index) => (
+        {/* Feature Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={feature.titleEn}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-brand-cream rounded-3xl p-8 border border-brand-border shadow-sm hover:shadow-lg hover-lift transition-all flex flex-col justify-between items-start space-y-6"
+              custom={index}
+              className="bg-background rounded-3xl p-7 text-center shadow-sm hover:shadow-lg hover-lift transition-all border border-brand-border flex flex-col items-center space-y-4"
             >
-              <div className="bg-brand-yellow p-3.5 rounded-2xl flex items-center justify-center shadow-md">
-                {reason.icon}
+              {/* Icon Container */}
+              <div className="w-14 h-14 bg-brand-amber rounded-2xl flex items-center justify-center shadow-md">
+                <feature.icon className="w-6 h-6 text-black" />
               </div>
-              <div className="space-y-3">
+
+              {/* Content */}
+              <div className="space-y-2">
                 <h3 className="font-serif font-bold text-lg text-brand-burgundy">
-                  {reason.titleEn}
+                  {feature.titleEn}
                 </h3>
                 <h4 className="font-sans font-bold text-xs text-brand-dark/60 leading-none">
-                  {reason.titleBn}
+                  {feature.titleBn}
                 </h4>
-                <p className="font-sans text-xs text-brand-dark/70 leading-relaxed font-semibold">
-                  {reason.descEn}
+                <p className="font-sans text-xs sm:text-sm text-brand-dark/70 leading-relaxed font-medium pt-1">
+                  {feature.descEn}
                 </p>
-                <p className="font-sans text-[11px] text-brand-dark/60 leading-relaxed font-medium">
-                  {reason.descBn}
+                <p className="font-sans text-[11px] text-brand-dark/50 leading-relaxed font-medium">
+                  {feature.descBn}
                 </p>
               </div>
             </motion.div>

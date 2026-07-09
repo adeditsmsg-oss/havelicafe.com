@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, Clock, Check, Coffee } from 'lucide-react';
+import { Calendar, Users, Clock, Check, MessageSquare } from 'lucide-react';
 
 export default function Reservation() {
   const [bookingSuccess, setBookingSuccess] = useState(false);
@@ -10,7 +10,7 @@ export default function Reservation() {
     name: '',
     phone: '',
     date: '',
-    time: '18:00',
+    time: '18:30',
     guests: '2',
     note: ''
   });
@@ -24,19 +24,32 @@ export default function Reservation() {
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API reservation request
-    setTimeout(() => {
-      setBookingSuccess(true);
-    }, 600);
+
+    // Format the WhatsApp message
+    const message = `🍽️ Table Reservation - Haveli Cafe
+    
+Name: ${formData.name}
+Phone: ${formData.phone}
+Date: ${formData.date}
+Time: ${formData.time}
+Guests: ${formData.guests}
+Special Request: ${formData.note || 'None'}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/918248481654?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
+    setBookingSuccess(true);
   };
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden" id="reserve">
+    <section className="py-16 md:py-24 bg-background relative overflow-hidden" id="reserve">
       {/* Background blobs */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-brand-yellow/5 blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-brand-amber/5 blur-3xl -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
           {/* Left Text / Info Panel */}
           <div className="lg:col-span-5 flex flex-col justify-between text-brand-dark py-2">
@@ -57,7 +70,7 @@ export default function Reservation() {
 
             <div className="space-y-4 pt-8 lg:pt-0">
               <div className="flex items-center space-x-4 bg-brand-cream p-4 rounded-2xl border border-brand-border shadow-sm">
-                <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy">
+                <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -67,12 +80,12 @@ export default function Reservation() {
               </div>
 
               <div className="flex items-center space-x-4 bg-brand-cream p-4 rounded-2xl border border-brand-border shadow-sm">
-                <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy">
+                <div className="bg-brand-amber/10 p-3 rounded-xl text-brand-burgundy">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-sans font-bold text-sm text-brand-burgundy">Bulk / Celebration Bookings</h4>
-                  <p className="font-sans text-xs text-brand-dark/60 font-semibold">Call +91 8248481654 for birthdays and group parties.</p>
+                  <p className="font-sans text-xs text-brand-dark/60 font-semibold">Call +91 82484 81654 for birthdays and group parties.</p>
                 </div>
               </div>
             </div>
@@ -80,7 +93,7 @@ export default function Reservation() {
 
           {/* Right Form Panel */}
           <div className="lg:col-span-7">
-            <div className="bg-brand-cream rounded-3xl p-8 md:p-10 border border-brand-border shadow-lg h-full flex flex-col justify-center">
+            <div className="bg-brand-cream rounded-3xl p-6 md:p-10 border border-brand-border shadow-lg h-full flex flex-col justify-center">
               {!bookingSuccess ? (
                 <form onSubmit={handleBookingSubmit} className="space-y-5 font-sans">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -93,7 +106,7 @@ export default function Reservation() {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Sayantan Mukherjee"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
+                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
                       />
                     </div>
                     <div>
@@ -105,7 +118,7 @@ export default function Reservation() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="9876543210"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
+                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
                       />
                     </div>
                   </div>
@@ -113,54 +126,48 @@ export default function Reservation() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
                       <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">Select Date (তারিখ)</label>
-                      <div className="relative">
-                        <input
-                          type="date"
-                          name="date"
-                          required
-                          value={formData.date}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
-                        />
-                      </div>
+                      <input
+                        type="date"
+                        name="date"
+                        required
+                        value={formData.date}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                      />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">Select Time (সময়)</label>
-                      <div className="relative">
-                        <select
-                          name="time"
-                          value={formData.time}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
-                        >
-                          <option value="11:30">11:30 AM</option>
-                          <option value="13:00">1:00 PM</option>
-                          <option value="15:00">3:00 PM</option>
-                          <option value="17:00">5:00 PM</option>
-                          <option value="18:30">6:30 PM</option>
-                          <option value="19:30">7:30 PM</option>
-                          <option value="20:30">8:30 PM</option>
-                          <option value="21:30">9:30 PM</option>
-                        </select>
-                      </div>
+                      <select
+                        name="time"
+                        value={formData.time}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                      >
+                        <option value="11:30 AM">11:30 AM</option>
+                        <option value="01:00 PM">1:00 PM</option>
+                        <option value="03:00 PM">3:00 PM</option>
+                        <option value="05:00 PM">5:00 PM</option>
+                        <option value="06:30 PM">6:30 PM</option>
+                        <option value="07:30 PM">7:30 PM</option>
+                        <option value="08:30 PM">8:30 PM</option>
+                        <option value="09:30 PM">9:30 PM</option>
+                      </select>
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">No. of Guests (অতিথি সংখ্যা)</label>
-                      <div className="relative">
-                        <select
-                          name="guests"
-                          value={formData.guests}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
-                        >
-                          <option value="1">1 Person</option>
-                          <option value="2">2 People (Couple Seating)</option>
-                          <option value="4">4 People (Family Table)</option>
-                          <option value="6">6 People (Adda Table)</option>
-                          <option value="8">8 People</option>
-                          <option value="10">10+ People</option>
-                        </select>
-                      </div>
+                      <select
+                        name="guests"
+                        value={formData.guests}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                      >
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People (Couple Seating)</option>
+                        <option value="4">4 People (Family Table)</option>
+                        <option value="6">6 People (Adda Table)</option>
+                        <option value="8">8 People</option>
+                        <option value="10">10+ People</option>
+                      </select>
                     </div>
                   </div>
 
@@ -172,15 +179,16 @@ export default function Reservation() {
                       value={formData.note}
                       onChange={handleInputChange}
                       placeholder="E.g., Birthday celebration setting, window table, extra mild spicy food..."
-                      className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
+                      className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-brand-burgundy text-brand-yellow dark:text-black font-bold text-sm hover:bg-brand-burgundy/90 transition-all flex items-center justify-center space-x-2 shadow-md hover-lift"
+                    className="w-full py-3.5 rounded-xl bg-brand-burgundy text-brand-amber font-bold text-sm hover:bg-brand-burgundy/90 transition-all flex items-center justify-center gap-2 shadow-md hover-lift cursor-pointer"
                   >
-                    <span>Request Booking (টেবিল বুকিং করুন)</span>
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Request Booking via WhatsApp (টেবিল বুকিং করুন)</span>
                   </button>
                 </form>
               ) : (
