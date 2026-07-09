@@ -40,6 +40,21 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/40" />
       </div>
 
+      {/* ── Rotating Pizza Image (Top Right) ── */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+        className="absolute top-[8%] right-[-140px] sm:right-[-120px] md:right-[-80px] lg:right-[-20px] xl:right-[4%] w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[560px] xl:h-[560px] pointer-events-none select-none z-10 mix-blend-screen opacity-85"
+      >
+        <Image
+          src="/images/pizza_header.png"
+          alt="Slowly Rotating Delicious Pizza"
+          fill
+          className="object-contain"
+          priority
+        />
+      </motion.div>
+
       {/* ── Content Container ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col justify-between min-h-[70vh] md:min-h-[80vh]">
         <motion.div 
