@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Star, ShieldCheck, Heart } from 'lucide-react';
 import { seoConfig } from '@/utils/seo';
 
@@ -10,17 +11,14 @@ export default function Footer() {
           
           {/* Logo & Brand description (4 cols) */}
           <div className="md:col-span-4 space-y-5">
-            <a href="#" className="flex items-center space-x-2">
-              <span className="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-burgundy font-black text-xl shadow-md">
-                H
-              </span>
-              <div className="flex flex-col">
-                <span className="font-serif font-black text-xl tracking-wide text-brand-yellow">
-                  Haveli
-                </span>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-brand-cream/60 font-semibold leading-none mt-0.5">
-                  Cafe & Bistro
-                </span>
+            <a href="#" className="flex items-center group" aria-label="Haveli Cafe Home">
+              <div className="relative h-12 w-28">
+                <Image
+                  src="/images/logo.png"
+                  alt="Haveli Cafe Logo"
+                  fill
+                  className="object-contain transform group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </a>
             <p className="text-xs sm:text-sm text-brand-cream/65 leading-relaxed font-semibold">

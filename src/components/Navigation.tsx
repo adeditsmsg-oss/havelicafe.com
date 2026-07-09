@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -41,17 +42,15 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <a href="#" className="flex items-center space-x-2 group">
-              <span className="w-10 h-10 rounded-full bg-brand-burgundy flex items-center justify-center text-brand-yellow font-bold text-xl shadow-md transform group-hover:scale-105 transition-transform">
-                H
-              </span>
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-lg md:text-xl tracking-wide text-brand-burgundy leading-none">
-                  Haveli
-                </span>
-                <span className="font-sans text-[10px] uppercase tracking-widest text-brand-dark/70 font-semibold leading-none mt-0.5">
-                  Cafe & Bistro
-                </span>
+            <a href="#" className="flex items-center group" aria-label="Haveli Cafe Home">
+              <div className="relative h-12 w-28 md:h-14 md:w-32">
+                <Image
+                  src="/images/logo.png"
+                  alt="Haveli Cafe Logo"
+                  fill
+                  priority
+                  className="object-contain transform group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </a>
 
