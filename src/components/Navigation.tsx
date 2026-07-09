@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,35 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      setTheme('dark');
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      setTheme('light');
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      setTheme('light');
+      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    }
+  };
 
   const navLinks = [
     { nameEn: 'Menu', nameBn: 'মেনু', href: '#menu' },
@@ -72,6 +102,14 @@ export default function Navigation() {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center space-x-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2.5 rounded-full bg-brand-yellow/10 text-brand-burgundy hover:bg-brand-yellow/20 transition-colors"
+                aria-label="Toggle Day/Night Theme"
+                title={theme === 'light' ? 'Switch to Night Mode' : 'Switch to Day Mode'}
+              >
+                {theme === 'light' ? <Moon className="w-4 h-4 text-brand-dark" /> : <Sun className="w-4 h-4 text-brand-yellow fill-brand-yellow" />}
+              </button>
               <a
                 href="tel:+918248481654"
                 className="p-2.5 rounded-full bg-brand-yellow/10 text-brand-burgundy hover:bg-brand-yellow/20 transition-colors"
@@ -89,6 +127,13 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-2">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full bg-brand-yellow/20 text-brand-burgundy"
+                aria-label="Toggle Day/Night Theme"
+              >
+                {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4 text-brand-yellow fill-brand-yellow" />}
+              </button>
               <a
                 href="tel:+918248481654"
                 className="p-2 rounded-full bg-brand-yellow/20 text-brand-burgundy"
