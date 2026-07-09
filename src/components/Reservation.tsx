@@ -31,7 +31,7 @@ export default function Reservation() {
   };
 
   return (
-    <section className="py-24 bg-brand-cream relative overflow-hidden" id="reserve">
+    <section className="py-24 bg-background relative overflow-hidden" id="reserve">
       {/* Background blobs */}
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-brand-yellow/5 blur-3xl -z-10" />
 
@@ -56,8 +56,8 @@ export default function Reservation() {
             </div>
 
             <div className="space-y-4 pt-8 lg:pt-0">
-              <div className="flex items-center space-x-4 bg-white p-4 rounded-2xl border border-brand-burgundy/5 shadow-sm">
-                <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy">
+              <div className="flex items-center space-x-4 bg-brand-cream p-4 rounded-2xl border border-brand-border shadow-sm">
+                <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -66,8 +66,8 @@ export default function Reservation() {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 bg-white p-4 rounded-2xl border border-brand-burgundy/5 shadow-sm">
-                <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy">
+              <div className="flex items-center space-x-4 bg-brand-cream p-4 rounded-2xl border border-brand-border shadow-sm">
+                <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
@@ -80,7 +80,7 @@ export default function Reservation() {
 
           {/* Right Form Panel */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-brand-burgundy/5 shadow-lg h-full flex flex-col justify-center">
+            <div className="bg-brand-cream rounded-3xl p-8 md:p-10 border border-brand-border shadow-lg h-full flex flex-col justify-center">
               {!bookingSuccess ? (
                 <form onSubmit={handleBookingSubmit} className="space-y-5 font-sans">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -93,7 +93,7 @@ export default function Reservation() {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Sayantan Mukherjee"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                        className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                       />
                     </div>
                     <div>
@@ -105,7 +105,7 @@ export default function Reservation() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="9876543210"
-                        className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                        className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                       />
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default function Reservation() {
                           required
                           value={formData.date}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                         />
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export default function Reservation() {
                           name="time"
                           value={formData.time}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                         >
                           <option value="11:30">11:30 AM</option>
                           <option value="13:00">1:00 PM</option>
@@ -151,7 +151,7 @@ export default function Reservation() {
                           name="guests"
                           value={formData.guests}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                          className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                         >
                           <option value="1">1 Person</option>
                           <option value="2">2 People (Couple Seating)</option>
@@ -172,7 +172,7 @@ export default function Reservation() {
                       value={formData.note}
                       onChange={handleInputChange}
                       placeholder="E.g., Birthday celebration setting, window table, extra mild spicy food..."
-                      className="w-full px-4 py-3.5 rounded-xl border border-brand-burgundy/10 bg-brand-cream/20 dark:bg-brand-cream/5 text-brand-dark focus:outline-none focus:border-brand-burgundy/40 text-sm font-semibold"
+                      className="w-full px-4 py-3.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark focus:outline-none focus:border-brand-yellow/50 text-sm font-semibold"
                     />
                   </div>
 

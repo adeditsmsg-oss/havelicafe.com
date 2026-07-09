@@ -50,13 +50,13 @@ export default function DigitalMenu() {
 
         {/* Categories quick info badges */}
         <div className="pt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg mx-auto text-xs text-brand-dark/65 dark:text-brand-dark/50 font-bold uppercase tracking-wider">
-          <div className="bg-white dark:bg-brand-cream/5 py-3.5 px-4 rounded-xl border border-brand-burgundy/5 dark:border-brand-yellow/5">
+          <div className="bg-brand-cream py-3.5 px-4 rounded-xl border border-brand-border">
             🍔 Burgers & Pizzas
           </div>
-          <div className="bg-white dark:bg-brand-cream/5 py-3.5 px-4 rounded-xl border border-brand-burgundy/5 dark:border-brand-yellow/5">
+          <div className="bg-brand-cream py-3.5 px-4 rounded-xl border border-brand-border">
             🍹 Layered Mocktails
           </div>
-          <div className="bg-white dark:bg-brand-cream/5 py-3.5 px-4 rounded-xl border border-brand-burgundy/5 dark:border-brand-yellow/5 col-span-2 sm:col-span-1">
+          <div className="bg-brand-cream py-3.5 px-4 rounded-xl border border-brand-border col-span-2 sm:col-span-1">
             🥢 Fusion Starters
           </div>
         </div>

@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 bg-brand-cream relative overflow-hidden" id="contact">
+    <section className="py-24 bg-background relative overflow-hidden" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -56,9 +56,9 @@ export default function Contact() {
                 {/* Phone */}
                 <a
                   href="tel:+918248481654"
-                  className="flex items-start space-x-4 bg-white p-4.5 rounded-2xl border border-brand-burgundy/5 shadow-sm hover-lift transition-all"
+                  className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm hover-lift transition-all"
                 >
-                  <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -73,9 +73,9 @@ export default function Contact() {
                   href="https://maps.app.goo.gl/ChIJ-S9hK5i42joRoQv595Dk74Y"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start space-x-4 bg-white p-4.5 rounded-2xl border border-brand-burgundy/5 shadow-sm hover-lift transition-all"
+                  className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm hover-lift transition-all"
                 >
-                  <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -88,8 +88,8 @@ export default function Contact() {
                 </a>
 
                 {/* Email */}
-                <div className="flex items-start space-x-4 bg-white p-4.5 rounded-2xl border border-brand-burgundy/5 shadow-sm">
-                  <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                <div className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm">
+                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -99,8 +99,8 @@ export default function Contact() {
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-start space-x-4 bg-white p-4.5 rounded-2xl border border-brand-burgundy/5 shadow-sm">
-                  <div className="bg-brand-burgundy/5 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
+                <div className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm">
+                  <div className="bg-brand-yellow/10 p-3 rounded-xl text-brand-burgundy flex-shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -112,7 +112,7 @@ export default function Contact() {
             </div>
 
             {/* Quick Contact Form */}
-            <div className="bg-white rounded-3xl p-6 border border-brand-burgundy/5 shadow-md">
+            <div className="bg-brand-cream rounded-3xl p-6 border border-brand-border shadow-md">
               {!success ? (
                 <form onSubmit={handleInquirySubmit} className="space-y-4 font-sans">
                   <h4 className="font-serif font-bold text-base text-brand-burgundy mb-2">Send a Quick Message</h4>
@@ -124,7 +124,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
                     />
                     <input
                       type="tel"
@@ -133,7 +133,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone"
-                      className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                      className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
                     />
                   </div>
                   <textarea
@@ -143,7 +143,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Message..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-brand-burgundy/10 bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-burgundy/40"
+                    className="w-full px-4 py-2.5 rounded-xl border border-brand-border bg-white dark:bg-brand-cream text-brand-dark text-xs font-semibold focus:outline-none focus:border-brand-yellow/50"
                   />
                   <button
                     type="submit"

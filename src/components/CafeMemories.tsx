@@ -45,7 +45,7 @@ export default function CafeMemories() {
     : galleryItems.filter(item => item.category === filter);
 
   return (
-    <section className="py-24 bg-brand-cream relative overflow-hidden" id="memories">
+    <section className="py-24 bg-background relative overflow-hidden" id="memories">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -74,7 +74,7 @@ export default function CafeMemories() {
               className={`px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all ${
                 filter === btn.id
                   ? 'bg-brand-burgundy text-brand-yellow dark:text-black shadow-md'
-                  : 'bg-white dark:bg-brand-cream text-brand-dark/80 border border-brand-burgundy/5 hover:bg-brand-burgundy/5'
+                  : 'bg-white dark:bg-brand-cream text-brand-dark/80 border border-brand-border hover:bg-brand-yellow/10'
               }`}
             >
               <span className="flex flex-col items-center">
@@ -111,10 +111,10 @@ export default function CafeMemories() {
                 />
                 
                 {/* Hover overlay details */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-brand-cream">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
                   <span className="font-serif font-bold text-sm tracking-wide leading-none">{item.titleEn}</span>
                   <span className="font-sans font-bold text-[10px] text-brand-yellow leading-none mt-1">{item.titleBn}</span>
-                  <span className="font-sans text-[9px] text-brand-cream/65 uppercase tracking-widest mt-2 flex items-center gap-1 leading-none">
+                  <span className="font-sans text-[9px] text-white/75 uppercase tracking-widest mt-2 flex items-center gap-1 leading-none">
                     {item.category === 'food' ? <ImageIcon className="w-2.5 h-2.5" /> : <Camera className="w-2.5 h-2.5" />}
                     {item.category === 'food' ? 'Food & Drink' : 'Interior Vibe'}
                   </span>

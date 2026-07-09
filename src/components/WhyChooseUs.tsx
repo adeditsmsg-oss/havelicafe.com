@@ -7,28 +7,28 @@ import { Camera, PiggyBank, Heart, Sparkles } from 'lucide-react';
 export default function WhyChooseUs() {
   const reasons = [
     {
-      icon: <Camera className="w-6 h-6 text-brand-yellow" />,
+      icon: <Camera className="w-6 h-6 text-black" />,
       titleEn: 'Instagrammable Spot',
       titleBn: 'দারুণ সেলফি স্পট',
       descEn: 'From our custom DSLR girl painting to the cool cat mural, our interior is ready for your selfies and Reels.',
       descBn: 'ডিএসএলআর গার্ল পেইন্টিং থেকে শুরু করে চশমা পরা বিড়াল - প্রতিটি কোণ ছবি তোলার জন্য একদম পারফেক্ট।'
     },
     {
-      icon: <PiggyBank className="w-6 h-6 text-brand-yellow" />,
+      icon: <PiggyBank className="w-6 h-6 text-black" />,
       titleEn: 'Student & Pocket Friendly',
       titleBn: 'স্টুডেন্ট ফ্রেন্ডলি দাম',
       descEn: 'Premium taste that fits your budget. Special tea starts at ₹40 and combo meals are just ₹199!',
       descBn: 'বাজেট ফ্রেন্ডলি দামে প্রিমিয়াম স্বাদ। চা শুরু মাত্র ৪০ টাকা থেকে আর পেটভরা কম্বো মিল জাস্ট ১৯৯ টাকায়!'
     },
     {
-      icon: <Heart className="w-6 h-6 text-brand-yellow" />,
+      icon: <Heart className="w-6 h-6 text-black" />,
       titleEn: 'Cozy Cozy Seating',
       titleBn: 'আরামদায়ক বসার জায়গা',
       descEn: 'Enjoy our signature tire seats, quiet couple corners, and spacious tables for family get-togethers.',
       descBn: 'টায়ার স্টুল, নিরিবিলি কাপল কর্নার এবং ফ্যামিলি গেট-টুগেদারের জন্য বড় টেবিল।'
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-brand-yellow" />,
+      icon: <Sparkles className="w-6 h-6 text-black" />,
       titleEn: 'Always Freshly Cooked',
       titleBn: '১০০% ফ্রেশ খাবার',
       descEn: 'We maintain strict FSSAI hygiene standards. No pre-cooked meats or artificial colors, only fresh spices.',
@@ -64,9 +64,9 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-3xl p-8 border border-brand-burgundy/5 shadow-sm hover:shadow-lg hover-lift transition-all flex flex-col justify-between items-start space-y-6"
+              className="bg-brand-cream rounded-3xl p-8 border border-brand-border shadow-sm hover:shadow-lg hover-lift transition-all flex flex-col justify-between items-start space-y-6"
             >
-              <div className="bg-brand-burgundy p-3.5 rounded-2xl flex items-center justify-center shadow-md">
+              <div className="bg-brand-yellow p-3.5 rounded-2xl flex items-center justify-center shadow-md">
                 {reason.icon}
               </div>
               <div className="space-y-3">

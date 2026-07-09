@@ -7,7 +7,7 @@ import { Heart, Compass, Sparkles } from 'lucide-react';
 
 export default function OurStory() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="story">
+    <section className="py-24 bg-background relative overflow-hidden" id="story">
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 w-72 h-72 rounded-full bg-brand-yellow/5 blur-3xl -z-10" />
 
@@ -38,7 +38,7 @@ export default function OurStory() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute -bottom-8 -right-4 w-[50%] aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white z-20"
+              className="absolute -bottom-8 -right-4 w-[50%] aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-brand-cream z-20"
             >
               <Image
                 src="/images/interior_mural.jpeg"

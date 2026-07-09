@@ -66,7 +66,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="faq">
+    <section className="py-24 bg-background relative overflow-hidden" id="faq">
       <head>
         <script
           type="application/ld+json"
@@ -97,7 +97,7 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="bg-brand-cream/40 rounded-2xl border border-brand-burgundy/5 overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md"
+                className="bg-brand-cream rounded-2xl border border-brand-border overflow-hidden transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
@@ -114,7 +114,7 @@ export default function FAQ() {
                       </h4>
                     </div>
                   </div>
-                  <div className="bg-brand-cream p-1.5 rounded-lg text-brand-burgundy flex-shrink-0">
+                  <div className="bg-background p-1.5 border border-brand-border rounded-lg text-brand-burgundy flex-shrink-0">
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>

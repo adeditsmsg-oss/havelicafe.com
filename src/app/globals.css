@@ -1,35 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #000000;
-  --brand-yellow: #FF9800;
-  --brand-burgundy: #000000; /* Strict Black in Day Mode (Zero Burgundy/Brown) */
-  --brand-cream: #FFFFFF;    /* Clean White in Day Mode */
-  --brand-dark: #000000;
-  --brand-green: #FFC107;    /* Mapped to Yellow to keep theme pure */
+  --background: #F9FAFB;      /* Tailwind gray-50 (Page Background) */
+  --foreground: #111827;      /* Tailwind gray-900 */
+  --brand-yellow: #FF9800;    /* Material Orange (Branding Accent) */
+  --brand-burgundy: #111827;  /* Tailwind gray-900 (Headings/CTAs) */
+  --brand-cream: #FFFFFF;     /* White (Cards/Secondary Sections) */
+  --brand-dark: #4B5563;      /* Tailwind gray-600 (Body text) */
+  --brand-green: #FF9800;
+  --brand-muted: #6B7280;     /* Tailwind gray-500 (Muted text) */
+  --brand-border: #E5E7EB;    /* Tailwind gray-200 (Borders) */
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --background: #000000;
-    --foreground: #FFFFFF;
-    --brand-yellow: #FF9800;
-    --brand-burgundy: #FF9800; /* Glowing Yellow in Night Mode */
-    --brand-cream: #000000;    /* Deep Black in Night Mode */
-    --brand-dark: #FFFFFF;     /* Clean White in Night Mode */
+    --background: #111827;      /* Tailwind gray-900 (Page Background) */
+    --foreground: #F9FAFB;      /* Tailwind gray-50 */
+    --brand-yellow: #FF9800;    /* Material Orange */
+    --brand-burgundy: #F9FAFB;  /* Tailwind gray-50 (Headings/CTAs) */
+    --brand-cream: #1F2937;     /* Tailwind gray-800 (Cards/Secondary Sections) */
+    --brand-dark: #D1D5DB;      /* Tailwind gray-300 (Body text) */
     --brand-green: #FF9800;
+    --brand-muted: #9CA3AF;     /* Tailwind gray-400 (Muted text) */
+    --brand-border: #374151;    /* Tailwind gray-700 (Borders) */
   }
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --brand-yellow: #FF9800;
-  --brand-burgundy: #FF9800;
-  --brand-cream: #000000;
-  --brand-dark: #FFFFFF;
+  --background: #111827;      /* Tailwind gray-900 (Page Background) */
+  --foreground: #F9FAFB;      /* Tailwind gray-50 */
+  --brand-yellow: #FF9800;    /* Material Orange */
+  --brand-burgundy: #F9FAFB;  /* Tailwind gray-50 (Headings/CTAs) */
+  --brand-cream: #1F2937;     /* Tailwind gray-800 (Cards/Secondary Sections) */
+  --brand-dark: #D1D5DB;      /* Tailwind gray-300 (Body text) */
   --brand-green: #FF9800;
+  --brand-muted: #9CA3AF;     /* Tailwind gray-400 (Muted text) */
+  --brand-border: #374151;    /* Tailwind gray-700 (Borders) */
 }
 
 @theme {
@@ -40,6 +46,8 @@
   --color-brand-cream: var(--brand-cream);
   --color-brand-dark: var(--brand-dark);
   --color-brand-green: var(--brand-green);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
 }
@@ -68,19 +76,24 @@ html {
   scrollbar-width: none;
 }
 
-/* Glassmorphism utility updated for Yellow/White/Black theme */
+/* Glassmorphism utility updated for Orange/White/Black theme */
 .glass-nav {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 193, 7, 0.15);
+  border-bottom: 1px solid var(--brand-border);
 }
 
 @media (prefers-color-scheme: dark) {
   .glass-nav {
-    background: rgba(0, 0, 0, 0.85);
-    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+    background: rgba(31, 41, 55, 0.85); /* Tailwind gray-800 glassbg */
+    border-bottom: 1px solid var(--brand-border);
   }
+}
+
+.dark .glass-nav {
+  background: rgba(31, 41, 55, 0.85);
+  border-bottom: 1px solid var(--brand-border);
 }
 
 /* Custom auto-scrolling marquee animation */
