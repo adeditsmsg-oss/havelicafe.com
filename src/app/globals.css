@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF6;
+  --foreground: #1E1E1C;
+  --brand-yellow: #FFC107;
+  --brand-burgundy: #7E191B;
+  --brand-cream: #FAFAF6;
+  --brand-dark: #1E1E1C;
+  --brand-green: #2E5A36;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-green: var(--brand-green);
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--brand-cream);
+  color: var(--brand-dark);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars for interactive sliders but preserve scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background: rgba(250, 250, 246, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(126, 25, 27, 0.08);
+}
+
+/* Custom auto-scrolling marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Micro-animations */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
