@@ -82,28 +82,30 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
 
   return (
     <section
-      className="py-24 bg-background relative overflow-hidden"
+      style={{ backgroundColor: '#F59E0B' }}
+      className="py-24 relative overflow-hidden"
       id="reviews"
     >
-      <div className="absolute top-10 right-0 w-80 h-80 rounded-full bg-brand-amber/5 blur-3xl -z-10" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="font-sans font-bold text-xs uppercase tracking-widest text-brand-burgundy bg-brand-burgundy/5 px-4 py-1.5 rounded-full">
-            Your Voice Matters • আপনার মতামত
+          <span>
+            <span className="font-sans font-bold text-xs uppercase tracking-widest text-stone-900 bg-white/20 border border-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm">
+              Your Voice Matters • আপনার মতামত
+            </span>
           </span>
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-brand-burgundy leading-tight">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 leading-tight">
             Share Your Experience
           </h2>
-          <p className="font-sans text-sm sm:text-base text-brand-dark/70 font-semibold max-w-xl mx-auto">
+          <p className="font-sans text-sm sm:text-base text-stone-900/85 font-semibold max-w-xl mx-auto">
             আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ
           </p>
         </div>
 
         {/* Rating Card */}
         <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-br from-brand-amber/10 to-brand-cream rounded-3xl shadow-lg p-8 md:p-12 border border-brand-border">
+          <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-stone-100">
             <AnimatePresence mode="wait">
               {/* Step 1: Star Rating */}
               {step === 'rate' && (
@@ -115,10 +117,10 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   transition={{ duration: 0.3 }}
                   className="text-center space-y-6"
                 >
-                  <h3 className="font-serif font-bold text-xl md:text-2xl text-brand-burgundy">
+                  <h3 className="font-serif font-bold text-xl md:text-2xl text-stone-900">
                     How was your visit?
                   </h3>
-                  <p className="font-sans text-sm text-brand-dark/60 font-medium">
+                  <p className="font-sans text-sm text-stone-600 font-semibold">
                     Tap the stars to rate your experience
                   </p>
 
@@ -130,14 +132,14 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                         onClick={() => handleRatingClick(star)}
                         onMouseEnter={() => setHoverRating(star)}
                         onMouseLeave={() => setHoverRating(0)}
-                        className="p-1 transform hover:scale-110 transition-all duration-150 focus:outline-none"
+                        className="p-1 transform hover:scale-110 transition-all duration-150 focus:outline-none cursor-pointer"
                         aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
                       >
                         <Star
                           className={`w-10 h-10 md:w-12 md:h-12 transition-colors ${
                             star <= (hoverRating || rating)
-                              ? 'fill-brand-amber text-brand-amber'
-                              : 'text-brand-border'
+                              ? 'fill-[#F59E0B] text-[#F59E0B]'
+                              : 'text-stone-200 dark:text-stone-600'
                           }`}
                         />
                       </button>
@@ -145,7 +147,7 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   </div>
 
                   {/* Rating Label */}
-                  <p className="font-sans text-sm font-bold text-brand-burgundy h-5">
+                  <p className="font-sans text-sm font-extrabold text-stone-900 h-5">
                     {(hoverRating || rating) > 0
                       ? ratingLabels[hoverRating || rating]
                       : ''}
@@ -183,7 +185,7 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                           delay: Math.random() * 0.6,
                           ease: 'easeOut',
                         }}
-                        className="absolute left-1/2 bottom-1/2 w-2 h-2 rounded-full bg-brand-amber"
+                        className="absolute left-1/2 bottom-1/2 w-2 h-2 rounded-full bg-[#F59E0B]"
                       />
                     ))}
                   </div>
@@ -191,28 +193,28 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
                     <CheckCircle className="w-9 h-9" />
                   </div>
-                  <h3 className="font-serif font-bold text-xl md:text-2xl text-brand-burgundy">
+                  <h3 className="font-serif font-bold text-xl md:text-2xl text-stone-900">
                     We&apos;re so happy you loved it! 🎉
                   </h3>
-                  <p className="font-sans text-sm text-brand-dark/70 font-medium">
+                  <p className="font-sans text-sm text-stone-700 font-semibold">
                     Amader Google page e review dile onek khushi hobo!
                   </p>
-                  <p className="font-sans text-xs text-brand-dark/50 italic">
+                  <p className="font-sans text-xs text-stone-500 italic">
                     Redirecting to Google Reviews in a moment...
                   </p>
                   <a
                     href={GOOGLE_REVIEW_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-brand-burgundy text-brand-amber font-bold text-sm hover-lift shadow-md hover:shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-stone-900 text-white font-extrabold text-sm hover-lift shadow-md hover:shadow-lg transition-all cursor-pointer"
                   >
-                    <Star className="w-4 h-4 fill-brand-amber" />
+                    <Star className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
                     <span>Leave Google Review</span>
                   </a>
                   <div>
                     <button
                       onClick={resetAll}
-                      className="text-xs text-brand-dark/40 hover:text-brand-dark/60 font-medium transition-colors mt-2"
+                      className="text-xs text-stone-500 hover:text-stone-700 font-bold transition-colors mt-2 cursor-pointer"
                     >
                       ← Start over
                     </button>
@@ -231,20 +233,20 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   className="space-y-6"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="font-serif font-bold text-lg md:text-xl text-brand-burgundy">
+                    <h3 className="font-serif font-bold text-lg md:text-xl text-stone-900">
                       We&apos;re sorry to hear that
                     </h3>
                     <button
                       onClick={resetAll}
-                      className="p-1.5 rounded-full bg-brand-burgundy/5 text-brand-dark/60 hover:bg-brand-burgundy/10 transition-colors"
+                      className="p-1.5 rounded-full bg-stone-100 text-stone-500 hover:bg-stone-200 transition-colors cursor-pointer"
                     >
                       <X className="w-4 h-4" />
                     </button>
                   </div>
 
-                  <div className="flex items-start gap-2.5 bg-brand-amber/10 p-4 rounded-xl border border-brand-amber/20">
-                    <AlertTriangle className="w-4 h-4 text-brand-burgundy flex-shrink-0 mt-0.5" />
-                    <p className="text-xs text-brand-dark/80 font-semibold leading-normal">
+                  <div className="flex items-start gap-2.5 bg-[#F59E0B]/10 p-4 rounded-xl border border-[#F59E0B]/20">
+                    <AlertTriangle className="w-4 h-4 text-stone-750 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-stone-700 font-semibold leading-normal">
                       Please share the details so we can make things right. Your
                       feedback is sent directly to the cafe owner via WhatsApp.
                     </p>
@@ -256,7 +258,7 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">
+                        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                           Name *
                         </label>
                         <input
@@ -266,11 +268,11 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                           value={formData.name}
                           onChange={handleFormChange}
                           placeholder="Your name"
-                          className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                          className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white text-stone-900 focus:outline-none focus:border-stone-400 text-sm font-semibold dark:bg-stone-900 dark:border-stone-700"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">
+                        <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                           Phone *
                         </label>
                         <input
@@ -280,13 +282,13 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                           value={formData.phone}
                           onChange={handleFormChange}
                           placeholder="Phone number"
-                          className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                          className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white text-stone-900 focus:outline-none focus:border-stone-400 text-sm font-semibold dark:bg-stone-900 dark:border-stone-700"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                         What went wrong? *
                       </label>
                       <textarea
@@ -296,12 +298,12 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                         value={formData.issue}
                         onChange={handleFormChange}
                         placeholder="Tell us about the issue you faced..."
-                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                        className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white text-stone-900 focus:outline-none focus:border-stone-400 text-sm font-semibold dark:bg-stone-900 dark:border-stone-700"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-brand-dark/80 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                         Suggestions (optional)
                       </label>
                       <textarea
@@ -310,13 +312,13 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                         value={formData.suggestion}
                         onChange={handleFormChange}
                         placeholder="How can we improve?"
-                        className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-brand-dark focus:outline-none focus:border-brand-amber/50 text-sm font-semibold"
+                        className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white text-stone-900 focus:outline-none focus:border-stone-400 text-sm font-semibold dark:bg-stone-900 dark:border-stone-700"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl bg-brand-burgundy text-brand-amber font-bold text-sm hover:bg-brand-burgundy/90 transition-all flex items-center justify-center gap-2 shadow-md hover-lift"
+                      className="w-full py-3.5 rounded-xl bg-stone-900 text-white font-extrabold text-sm hover:bg-stone-850 transition-all flex items-center justify-center gap-2 shadow-md hover-lift cursor-pointer"
                     >
                       <Send className="w-4 h-4" />
                       <span>Send Feedback via WhatsApp</span>
@@ -338,16 +340,16 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
                   <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
                     <CheckCircle className="w-9 h-9" />
                   </div>
-                  <h3 className="font-serif font-bold text-xl md:text-2xl text-brand-burgundy">
+                  <h3 className="font-serif font-bold text-xl md:text-2xl text-stone-900">
                     Thank You!
                   </h3>
-                  <p className="font-sans text-sm text-brand-dark/70 font-medium max-w-sm mx-auto">
+                  <p className="font-sans text-sm text-stone-700 font-semibold max-w-sm mx-auto">
                     Your feedback has been sent to the cafe owner. We&apos;ll
                     work on improving your experience.
                   </p>
                   <button
                     onClick={resetAll}
-                    className="px-6 py-2.5 rounded-full border border-brand-burgundy/20 text-brand-burgundy text-xs font-bold hover:bg-brand-burgundy/5 transition-all"
+                    className="px-6 py-2.5 rounded-full border border-stone-200 text-stone-900 text-xs font-bold hover:bg-stone-50 transition-all cursor-pointer"
                   >
                     Rate Again
                   </button>
