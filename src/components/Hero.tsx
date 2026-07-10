@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Star, Users, MapPin, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -31,7 +31,7 @@ export default function Hero() {
       id="home"
     >
       {/* ── Content Container ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[75vh] md:min-h-[80vh]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Grid: Text on Left (5 columns), Burger Platter on Right (7 columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
@@ -92,54 +92,6 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-
-        {/* ── Floating Stats Bar (Aligned to bottom of Hero, styled in dark glass for orange theme) ── */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="w-full bg-stone-950/5 border border-stone-900/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-stone-900 text-center mt-8 lg:mt-0"
-        >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-stone-900/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
-              <Star className="w-5 h-5 fill-stone-900 text-stone-900" />
-            </div>
-            <div className="text-left">
-              <div className="text-xs text-stone-700 font-semibold">Google Rating</div>
-              <div className="font-bold text-sm md:text-base">4.6 Stars (524+)</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:border-r border-stone-900/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
-              <Users className="w-5 h-5" />
-            </div>
-            <div className="text-left">
-              <div className="text-xs text-stone-700 font-semibold">Happy Guests</div>
-              <div className="font-bold text-sm md:text-base">500+ Daily</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-stone-900/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
-              <MapPin className="w-5 h-5" />
-            </div>
-            <div className="text-left">
-              <div className="text-xs text-stone-700 font-semibold">Location</div>
-              <div className="font-bold text-sm md:text-base">Dharma, Midnapore</div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 last:border-0">
-            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
-              <Clock className="w-5 h-5" />
-            </div>
-            <div className="text-left">
-              <div className="text-xs text-stone-700 font-semibold">Opening Hours</div>
-              <div className="font-bold text-sm md:text-base">11:00 AM - 11 PM</div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
