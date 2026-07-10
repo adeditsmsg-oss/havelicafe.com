@@ -14,14 +14,14 @@ export default function DigitalMenu() {
       {/* ── Content Container (Grid Layout) ── */}
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Left Column: Exploding/Floating Biryani Handi Image */}
-        <div className="lg:col-span-5 flex justify-center items-center min-h-[300px] md:min-h-[400px]">
+        {/* Left Column: Exploding/Floating Biryani Handi Image (Sized up to col-span-6 and scaled by 120%) */}
+        <div className="lg:col-span-6 flex justify-center items-center min-h-[320px] md:min-h-[450px]">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1.2, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative w-full aspect-[4/3] max-w-[500px] pointer-events-none select-none"
+            className="relative w-full aspect-[4/3] max-w-[580px] pointer-events-none select-none lg:scale-120"
           >
             <Image
               src="/images/transparent_biryani.png"
@@ -33,8 +33,8 @@ export default function DigitalMenu() {
           </motion.div>
         </div>
 
-        {/* Right Column: Title, Description, and CTA Button */}
-        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+        {/* Right Column: Title, Description, and CTA Button (col-span-6) */}
+        <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           
           {/* Badge */}
           <motion.div
