@@ -43,18 +43,10 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            {/* Badge */}
-            <motion.div 
-              variants={itemVariants}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-stone-900/10 border border-stone-900/20 text-stone-900 text-xs md:text-sm font-bold backdrop-blur-sm"
-            >
-              <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
-            </motion.div>
-
             {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
             <motion.h1 
               variants={itemVariants}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-stone-900 tracking-wide leading-tight"
+              className="font-serif text-6xl sm:text-7xl md:text-8xl font-bold text-stone-900 tracking-wide leading-tight"
             >
               Haveli Cafe
             </motion.h1>
@@ -67,28 +59,18 @@ export default function Hero() {
               Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
             </motion.p>
 
-            {/* CTA Button */}
+            {/* CTA Button - Exploring Our Brand (Scrolling to #about story section) */}
             <motion.div 
               variants={itemVariants}
               className="w-full sm:w-auto"
             >
               <a
-                href="#menu"
+                href="#about"
                 className="inline-flex items-center justify-center gap-2.5 px-12 py-4.5 rounded-full bg-stone-900 text-white font-extrabold text-base hover:bg-stone-850 transition-all shadow-lg hover:shadow-stone-950/20 hover:scale-105 active:scale-95 group cursor-pointer"
               >
-                <span>Explore Menu</span>
+                <span>Explore Our Brand</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-            </motion.div>
-
-            {/* Interactive Dot Indicators (Screenshot style) */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex items-center gap-2 pt-4"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
-              <span className="w-6 h-2.5 rounded-full bg-stone-900 transition-all" />
-              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
             </motion.div>
           </motion.div>
 
@@ -98,7 +80,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] max-w-[720px] pointer-events-none select-none lg:-mr-8"
+              className="relative w-full aspect-[16/10] max-w-[760px] pointer-events-none select-none lg:-mr-10"
             >
               <Image
                 src="/images/transparent_burger.png"
