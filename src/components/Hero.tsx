@@ -24,114 +24,113 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-[90vh] md:min-h-screen w-full flex items-center justify-center pt-20 overflow-hidden" 
+      className="relative min-h-[95vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden bg-[#0B0F19]" 
       id="home"
     >
-      {/* ── Background Image ── */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero_banner.jpg"
-          alt="Haveli Cafe Ambience"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/40" />
-      </div>
-
-      {/* ── Rotating Pizza Image (Top Right) ── */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-        className="absolute top-[8%] right-[-140px] sm:right-[-120px] md:right-[-80px] lg:right-[-20px] xl:right-[4%] w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] xl:w-[560px] xl:h-[560px] pointer-events-none select-none z-10 opacity-90"
-      >
-        <Image
-          src="/images/pizza_header.png"
-          alt="Slowly Rotating Delicious Pizza"
-          fill
-          className="object-contain"
-          priority
-        />
-      </motion.div>
+      {/* Background subtle radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,#1e293b_0%,#0b0f19_70%)] opacity-40 z-0 pointer-events-none" />
 
       {/* ── Content Container ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col justify-between min-h-[70vh] md:min-h-[80vh]">
-        <motion.div 
-          className="max-w-3xl my-auto text-left"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Badge */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[75vh] md:min-h-[80vh]">
+        
+        {/* Main Grid: Text on Left, Rotating Food on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+          
+          {/* Left Column: Text & CTA */}
           <motion.div 
-            variants={itemVariants}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-amber/20 border border-brand-amber/30 text-brand-amber text-xs md:text-sm font-semibold mb-6 backdrop-blur-md"
+            className="lg:col-span-7 flex flex-col items-start text-left space-y-6 z-10"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
+            {/* Badge */}
+            <motion.div 
+              variants={itemVariants}
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-amber/15 border border-brand-amber/30 text-brand-amber text-xs md:text-sm font-bold backdrop-blur-sm"
+            >
+              <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
+            </motion.div>
+
+            {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
+            <motion.h1 
+              variants={itemVariants}
+              className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-wide leading-tight"
+            >
+              Haveli Cafe
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p 
+              variants={itemVariants}
+              className="text-stone-300 font-sans text-sm sm:text-base md:text-lg max-w-xl leading-relaxed font-medium"
+            >
+              Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 sm:items-center w-full sm:w-auto"
+            >
+              <a
+                href="#menu"
+                className="inline-flex items-center justify-center gap-2.5 px-10 py-4.5 rounded-full bg-brand-amber text-stone-900 font-extrabold text-base hover:bg-brand-amber-dark transition-all shadow-lg hover:shadow-brand-amber/20 hover:scale-105 active:scale-95 group cursor-pointer"
+              >
+                <span>Order Now</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="#reserve"
+                className="inline-flex items-center justify-center gap-2.5 px-10 py-4.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-extrabold text-base transition-all backdrop-blur-sm hover:scale-105 active:scale-95 cursor-pointer"
+              >
+                <Calendar className="w-5 h-5 text-brand-amber" />
+                <span>Book a Table</span>
+              </a>
+            </motion.div>
+
+            {/* Interactive Dot Indicators (Screenshot style) */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex items-center gap-2 pt-4"
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20 transition-all" />
+              <span className="w-6 h-2.5 rounded-full bg-brand-amber transition-all" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20 transition-all" />
+            </motion.div>
           </motion.div>
 
-          {/* Heading */}
-          <motion.h1 
-            variants={itemVariants}
-            className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-4"
-          >
-            Flavours That Feel <br className="hidden sm:inline" />
-            Like <span className="text-brand-amber">Home</span>
-          </motion.h1>
-
-          {/* Bengali Subheading */}
-          <motion.p 
-            variants={itemVariants}
-            className="font-serif text-xl sm:text-2xl text-brand-amber-light font-medium tracking-wide mb-6"
-          >
-            স্বাদে ভরা, ভালোবাসায় সাজানো
-          </motion.p>
-
-          {/* Description */}
-          <motion.p 
-            variants={itemVariants}
-            className="text-stone-300 text-base md:text-lg max-w-xl leading-relaxed mb-8"
-          >
-            Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
-          </motion.p>
-
-          {/* Buttons */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 mb-12 sm:items-center"
-          >
-            <a
-              href="#menu"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brand-amber text-stone-900 font-bold hover:bg-brand-amber-dark transition-colors shadow-lg hover:shadow-brand-amber/20 group"
+          {/* Right Column: Rotating Pizza Image */}
+          <div className="lg:col-span-5 flex justify-center items-center relative min-h-[300px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px]">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+              className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] pointer-events-none select-none"
             >
-              <span>Explore Menu</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#reserve"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold transition-all backdrop-blur-sm"
-            >
-              <Calendar className="w-4 h-4 text-brand-amber" />
-              <span>Book a Table</span>
-            </a>
-          </motion.div>
-        </motion.div>
+              <Image
+                src="/images/pizza_header.png"
+                alt="Slowly Rotating Delicious Pizza"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
 
-        {/* ── Floating Stats Bar ── */}
+        {/* ── Floating Stats Bar (Aligned to bottom of Hero) ── */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="w-full bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center mt-auto"
+          className="w-full bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center mt-8 lg:mt-0"
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-white/10 last:border-0 pr-2">
             <div className="p-2.5 rounded-xl bg-brand-amber/20 text-brand-amber">
               <Star className="w-5 h-5 fill-brand-amber" />
             </div>
             <div className="text-left">
-              <div className="text-sm text-stone-300">Google Rating</div>
-              <div className="font-bold text-lg">4.6 Stars (524+)</div>
+              <div className="text-xs text-stone-400">Google Rating</div>
+              <div className="font-bold text-sm md:text-base">4.6 Stars (524+)</div>
             </div>
           </div>
 
@@ -140,8 +139,8 @@ export default function Hero() {
               <Users className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-sm text-stone-300">Happy Guests</div>
-              <div className="font-bold text-lg">500+ Daily</div>
+              <div className="text-xs text-stone-400">Happy Guests</div>
+              <div className="font-bold text-sm md:text-base">500+ Daily</div>
             </div>
           </div>
 
@@ -150,8 +149,8 @@ export default function Hero() {
               <MapPin className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-sm text-stone-300">Location</div>
-              <div className="font-bold text-lg">Dharma, Midnapore</div>
+              <div className="text-xs text-stone-400">Location</div>
+              <div className="font-bold text-sm md:text-base">Dharma, Midnapore</div>
             </div>
           </div>
 
@@ -160,8 +159,8 @@ export default function Hero() {
               <Clock className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-sm text-stone-300">Opening Hours</div>
-              <div className="font-bold text-lg">11:00 AM - 11 PM</div>
+              <div className="text-xs text-stone-400">Opening Hours</div>
+              <div className="font-bold text-sm md:text-base">11:00 AM - 11 PM</div>
             </div>
           </div>
         </motion.div>
