@@ -95,14 +95,14 @@ export default function CustomerFavourites() {
         {/* 2-Column Grid Layout: Image on Left (col-span-5), Cards on Right (col-span-7) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column (col-span-5): Beautiful Eating Shawarma Graphic scaled by 120% */}
+          {/* Left Column (col-span-5): Beautiful Eating Shawarma Graphic scaled down to 70% */}
           <div className="lg:col-span-5 flex justify-center items-center min-h-[300px] md:min-h-[420px]">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1.2, y: 0 }}
+              initial={{ opacity: 0, scale: 0.6, y: 30 }}
+              whileInView={{ opacity: 1, scale: 0.7, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[4/5] max-w-[420px] pointer-events-none select-none lg:scale-120 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+              className="relative w-full aspect-[4/5] max-w-[420px] pointer-events-none select-none lg:scale-70 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
             >
               <Image
                 src="/images/transparent_eating_shawarma.jpg"

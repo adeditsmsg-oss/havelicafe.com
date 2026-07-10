@@ -8,7 +8,6 @@ import PopularMenu from '@/components/PopularMenu';
 import DigitalMenu from '@/components/DigitalMenu';
 import CustomerFavourites from '@/components/CustomerFavourites';
 import CafeMemories from '@/components/CafeMemories';
-import GoogleReviewsCard from '@/components/GoogleReviewsCard';
 import RestaurantGallery from '@/components/RestaurantGallery';
 import Reservation from '@/components/Reservation';
 import ReputationManager from '@/components/ReputationManager';
@@ -49,9 +48,6 @@ export default function Home() {
 
         {/* 9. Cafe Memories Gallery (using real images) */}
         <CafeMemories />
-
-        {/* 9.5 Google Reviews Card (Summary and Action button) */}
-        <GoogleReviewsCard />
 
         {/* 10. Restaurant Gallery (NEW) */}
         <RestaurantGallery />
