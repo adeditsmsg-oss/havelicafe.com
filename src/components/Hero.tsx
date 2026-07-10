@@ -24,12 +24,9 @@ export default function Hero() {
   return (
     <section 
       style={{
-        backgroundImage: "url('/images/burger_hero_bg.png')",
-        backgroundSize: 'contain',
-        backgroundPosition: 'center right',
-        backgroundRepeat: 'no-repeat',
+        background: "url('/images/burger_hero_bg.png') no-repeat right center / contain, linear-gradient(to right, #e65c00, #ea580c, #f5af19)",
       }}
-      className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 bg-gradient-to-r from-[#e65c00] via-[#ea580c] to-[#f5af19]" 
+      className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16" 
       id="home"
     >
       {/* ── Content Container ── */}
