@@ -12,7 +12,6 @@ import GoogleReviewsCard from '@/components/GoogleReviewsCard';
 import RestaurantGallery from '@/components/RestaurantGallery';
 import Reservation from '@/components/Reservation';
 import ReputationManager from '@/components/ReputationManager';
-import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -59,9 +58,6 @@ export default function Home() {
 
         {/* 11. Reservation Form */}
         <Reservation />
-
-        {/* 14. Frequently Asked Questions */}
-        <FAQ />
 
         {/* 15. Contact & Google Map */}
         <Contact />
