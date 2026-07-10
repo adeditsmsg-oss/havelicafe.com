@@ -25,7 +25,7 @@ export default function StickyCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-brand-burgundy/10 py-3 px-4 shadow-2xl flex md:hidden items-center justify-between gap-3 animate-fade-in">
       {/* Directions Link (Small Icon Button) */}
       <a
-        href="https://maps.app.goo.gl/ChIJ-S9hK5i42joRoQv595Dk74Y"
+        href="https://www.google.com/maps/place/Haveli+Cafe/@22.4297376,87.3073482,17z/data=!3m1!4b1!4m6!3m5!1s0x3a1d5b0c20709fcb:0xcfea9a5ab4638e10!8m2!3d22.4297376!4d87.3099231!16s%2Fg%2F11qzqxk6xg?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-brand-cream p-3 rounded-xl text-brand-burgundy hover:bg-brand-yellow/20 flex items-center justify-center border border-brand-burgundy/5"

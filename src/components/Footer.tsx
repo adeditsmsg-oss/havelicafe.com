@@ -55,9 +55,6 @@ export default function Footer() {
               <li>
                 <a href="#reserve" className="hover:text-brand-amber transition-colors">Table Reservation (টেবিল বুকিং)</a>
               </li>
-              <li>
-                <a href="#faq" className="hover:text-brand-amber transition-colors">Frequently Asked Questions</a>
-              </li>
             </ul>
           </div>
 

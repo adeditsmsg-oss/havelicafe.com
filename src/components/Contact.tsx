@@ -70,7 +70,7 @@ export default function Contact() {
 
                 {/* Location */}
                 <a
-                  href="https://maps.app.goo.gl/ChIJ-S9hK5i42joRoQv595Dk74Y"
+                  href="https://www.google.com/maps/place/Haveli+Cafe/@22.4297376,87.3073482,17z/data=!3m1!4b1!4m6!3m5!1s0x3a1d5b0c20709fcb:0xcfea9a5ab4638e10!8m2!3d22.4297376!4d87.3099231!16s%2Fg%2F11qzqxk6xg?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-4 bg-brand-cream p-4.5 rounded-2xl border border-brand-border shadow-sm hover-lift transition-all"
