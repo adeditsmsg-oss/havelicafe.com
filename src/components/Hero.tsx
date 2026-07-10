@@ -78,9 +78,9 @@ export default function Hero() {
           <div className="lg:col-span-7 flex justify-center items-center relative min-h-[320px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[600px]">
             <motion.div
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1.05 }}
+              animate={{ opacity: 1, y: 0, scale: 1.4 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] max-w-[880px] pointer-events-none select-none lg:-mr-16 lg:scale-110"
+              className="relative w-full aspect-[16/10] max-w-[880px] pointer-events-none select-none lg:-mr-16 lg:scale-140"
             >
               <Image
                 src="/images/transparent_burger.png"
