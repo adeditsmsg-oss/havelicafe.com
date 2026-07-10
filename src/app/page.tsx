@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
 import FeaturedDishes from '@/components/FeaturedDishes';
 import OurStory from '@/components/OurStory';
-import WhyChooseUs from '@/components/WhyChooseUs';
 import PopularMenu from '@/components/PopularMenu';
 import DigitalMenu from '@/components/DigitalMenu';
 import CustomerFavourites from '@/components/CustomerFavourites';
@@ -39,9 +38,6 @@ export default function Home() {
 
         {/* 4. About & Our Story */}
         <OurStory />
-
-        {/* 5. Why Choose Us */}
-        <WhyChooseUs />
 
         {/* 6. Popular Menu Grid (NEW) */}
         <PopularMenu />
