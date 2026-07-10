@@ -11,7 +11,7 @@
   --brand-text: #44403C;       /* Body text (stone-700) */
   --brand-muted: #78716C;      /* Muted text (stone-500) */
   --brand-border: #E7E5E4;     /* Borders (stone-200) */
-  --brand-burgundy: #EA580C;   /* Deep accent for logo/headings */
+  --brand-burgundy: #F59E0B;   /* Deep accent for logo/headings matching the brand amber */
 }
 
 @theme {
@@ -110,7 +110,7 @@ html {
   --brand-text: #E2E8F0;       /* Light gray body text */
   --brand-muted: #94A3B8;      /* Muted gray text */
   --brand-border: #334155;     /* Dark border */
-  --brand-burgundy: #FB923C;   /* Light orange for headings in dark mode */
+  --brand-burgundy: #F59E0B;   /* Light orange for headings in dark mode matching brand amber */
 }
 
 /* Force dark mode background and text colors on standard utilities */
