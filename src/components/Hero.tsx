@@ -24,21 +24,29 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-[95vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden bg-black" 
+      className="relative min-h-[95vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-amber" 
       id="home"
     >
-      {/* Background subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,#1e293b_0%,#000000_75%)] opacity-55 z-0 pointer-events-none" />
+      {/* ── Background Image (The uploaded burger platter with orange/yellow gradient background) ── */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/burger_hero_bg.png"
+          alt="Haveli Cafe Platter Background"
+          fill
+          priority
+          className="object-cover object-right md:object-center"
+        />
+        {/* Subtle overlay on mobile only for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/40 via-transparent to-transparent md:hidden" />
+      </div>
 
       {/* ── Content Container ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[75vh] md:min-h-[80vh]">
         
-        {/* Main Grid: Text on Left, Food Image on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
-          
-          {/* Left Column: Text & CTA */}
+        {/* Text Area (Aligned to the left empty space of the background image) */}
+        <div className="my-auto max-w-xl md:max-w-2xl text-left">
           <motion.div 
-            className="lg:col-span-6 flex flex-col items-start text-left space-y-6 z-10"
+            className="flex flex-col items-start space-y-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -46,7 +54,7 @@ export default function Hero() {
             {/* Badge */}
             <motion.div 
               variants={itemVariants}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-amber/15 border border-brand-amber/30 text-brand-amber text-xs md:text-sm font-bold backdrop-blur-sm"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-stone-900/10 border border-stone-900/20 text-stone-900 text-xs md:text-sm font-bold backdrop-blur-sm"
             >
               <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
             </motion.div>
@@ -54,7 +62,7 @@ export default function Hero() {
             {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
             <motion.h1 
               variants={itemVariants}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white tracking-wide leading-tight"
+              className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-stone-900 tracking-wide leading-tight"
             >
               Haveli Cafe
             </motion.h1>
@@ -62,7 +70,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-stone-300 font-sans text-sm sm:text-base md:text-lg max-w-lg leading-relaxed font-medium"
+              className="text-stone-900/85 font-sans text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-semibold"
             >
               Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
             </motion.p>
@@ -74,86 +82,68 @@ export default function Hero() {
             >
               <a
                 href="#menu"
-                className="inline-flex items-center justify-center gap-2.5 px-12 py-4.5 rounded-full bg-brand-amber text-stone-900 font-extrabold text-base hover:bg-brand-amber-dark transition-all shadow-lg hover:shadow-brand-amber/20 hover:scale-105 active:scale-95 group cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-12 py-4.5 rounded-full bg-stone-900 text-white font-extrabold text-base hover:bg-stone-850 transition-all shadow-lg hover:shadow-stone-950/20 hover:scale-105 active:scale-95 group cursor-pointer"
               >
                 <span>Explore Menu</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
 
-            {/* Interactive Dot Indicators (Screenshot style) */}
+            {/* Pagination Dot Indicators */}
             <motion.div 
               variants={itemVariants}
               className="flex items-center gap-2 pt-4"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20 transition-all" />
-              <span className="w-6 h-2.5 rounded-full bg-brand-amber transition-all" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/20 transition-all" />
+              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
+              <span className="w-6 h-2.5 rounded-full bg-stone-900 transition-all" />
+              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
             </motion.div>
           </motion.div>
-
-          {/* Right Column: High-Res Burger & Fries Image */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[300px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[520px]">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] max-w-[620px] pointer-events-none select-none"
-            >
-              <Image
-                src="/images/burger_hero.png"
-                alt="Haveli Cafe Burger and Fries Platter"
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
-          </div>
         </div>
 
-        {/* ── Floating Stats Bar (Aligned to bottom of Hero) ── */}
+        {/* ── Floating Stats Bar (Aligned to bottom of Hero, styled in dark glass for orange theme) ── */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="w-full bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-white text-center mt-8 lg:mt-0"
+          className="w-full bg-stone-950/5 border border-stone-900/10 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-stone-900 text-center mt-8 lg:mt-0"
         >
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-white/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-brand-amber/20 text-brand-amber">
-              <Star className="w-5 h-5 fill-brand-amber" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-stone-900/10 last:border-0 pr-2">
+            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
+              <Star className="w-5 h-5 fill-stone-900 text-stone-900" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-stone-400">Google Rating</div>
+              <div className="text-xs text-stone-700 font-semibold">Google Rating</div>
               <div className="font-bold text-sm md:text-base">4.6 Stars (524+)</div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:border-r border-white/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-brand-amber/20 text-brand-amber">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:border-r border-stone-900/10 last:border-0 pr-2">
+            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
               <Users className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-stone-400">Happy Guests</div>
+              <div className="text-xs text-stone-700 font-semibold">Happy Guests</div>
               <div className="font-bold text-sm md:text-base">500+ Daily</div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-white/10 last:border-0 pr-2">
-            <div className="p-2.5 rounded-xl bg-brand-amber/20 text-brand-amber">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 border-r border-stone-900/10 last:border-0 pr-2">
+            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
               <MapPin className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-stone-400">Location</div>
+              <div className="text-xs text-stone-700 font-semibold">Location</div>
               <div className="font-bold text-sm md:text-base">Dharma, Midnapore</div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 last:border-0">
-            <div className="p-2.5 rounded-xl bg-brand-amber/20 text-brand-amber">
+            <div className="p-2.5 rounded-xl bg-stone-900/10 text-stone-900">
               <Clock className="w-5 h-5" />
             </div>
             <div className="text-left">
-              <div className="text-xs text-stone-400">Opening Hours</div>
+              <div className="text-xs text-stone-700 font-semibold">Opening Hours</div>
               <div className="font-bold text-sm md:text-base">11:00 AM - 11 PM</div>
             </div>
           </div>
