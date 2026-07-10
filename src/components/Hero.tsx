@@ -5,88 +5,64 @@ import { ArrowRight, Star, Users, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as any } },
-  };
-
   return (
     <section 
       style={{
-        background: "url('/images/burger_hero_bg.png') no-repeat right center / contain, linear-gradient(to right, #e65c00, #ea580c, #f5af19)",
+        background: "linear-gradient(135deg, #e65c00 0%, #ea580c 55%, #f5af19 100%)",
       }}
-      className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16" 
+      className="relative min-h-[90vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden" 
       id="home"
     >
       {/* ── Content Container ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[70vh] md:min-h-[80vh]">
         
-        {/* Text Area (Aligned to the left empty space of the background image) */}
-        <div className="my-auto max-w-lg md:max-w-xl text-left bg-gradient-to-r from-[#e65c00]/90 to-transparent p-4 rounded-3xl md:bg-none">
+        {/* Centered Content Area */}
+        <div className="my-auto max-w-3xl mx-auto text-center flex flex-col items-center space-y-6 md:space-y-8">
+          
+          {/* Badge */}
           <motion.div 
-            className="flex flex-col items-start space-y-5"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-stone-900/10 border border-stone-900/20 text-stone-900 text-xs md:text-sm font-bold backdrop-blur-sm"
           >
-            {/* Badge */}
-            <motion.div 
-              variants={itemVariants}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-stone-900/10 border border-stone-900/20 text-stone-900 text-xs md:text-sm font-bold backdrop-blur-sm"
-            >
-              <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
-            </motion.div>
+            <span>🔥</span> Midnapore-র সবচেয়ে Instagrammable Cafe
+          </motion.div>
 
-            {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
-            <motion.h1 
-              variants={itemVariants}
-              className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-stone-900 tracking-wide leading-tight"
-            >
-              Haveli Cafe
-            </motion.h1>
+          {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-serif text-6xl sm:text-7xl md:text-9xl font-bold text-stone-900 tracking-wide leading-none"
+          >
+            Haveli Cafe
+          </motion.h1>
 
-            {/* Description */}
-            <motion.p 
-              variants={itemVariants}
-              className="text-stone-900/85 font-sans text-sm sm:text-base md:text-lg leading-relaxed font-semibold max-w-sm"
-            >
-              Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
-            </motion.p>
+          {/* Description */}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-stone-900/85 font-sans text-sm sm:text-base md:text-xl leading-relaxed font-semibold max-w-2xl mx-auto"
+          >
+            Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
+          </motion.p>
 
-            {/* CTA Button */}
-            <motion.div 
-              variants={itemVariants}
-              className="w-full sm:w-auto"
+          {/* CTA Button */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="w-full flex items-center justify-center"
+          >
+            <a
+              href="#menu"
+              className="inline-flex items-center justify-center gap-2.5 px-12 py-5 rounded-full bg-stone-900 text-white font-extrabold text-base md:text-lg hover:bg-stone-850 transition-all shadow-lg hover:shadow-stone-950/20 hover:scale-105 active:scale-95 group cursor-pointer"
             >
-              <a
-                href="#menu"
-                className="inline-flex items-center justify-center gap-2.5 px-12 py-4.5 rounded-full bg-stone-900 text-white font-extrabold text-base hover:bg-stone-850 transition-all shadow-lg hover:shadow-stone-950/20 hover:scale-105 active:scale-95 group cursor-pointer"
-              >
-                <span>Explore Menu</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </motion.div>
-
-            {/* Pagination Dot Indicators */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex items-center gap-2 pt-2"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
-              <span className="w-6 h-2.5 rounded-full bg-stone-900 transition-all" />
-              <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
-            </motion.div>
+              <span>Explore Menu</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </motion.div>
         </div>
 
