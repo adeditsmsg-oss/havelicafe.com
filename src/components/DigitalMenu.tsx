@@ -55,7 +55,7 @@ export default function DigitalMenu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-stone-900 leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
           >
             Craving Your Next Meal?
           </motion.h2>
@@ -66,7 +66,7 @@ export default function DigitalMenu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-sans text-sm sm:text-base md:text-lg text-stone-900/85 max-w-xl leading-relaxed font-semibold"
+            className="font-sans text-sm sm:text-base md:text-lg text-white/90 max-w-xl leading-relaxed font-semibold"
           >
             From signature Chicken Shawarma and loaded Chinese platters to chilled mocktails, crispy wings, ar creamy cold coffee — amader kache sob ache! Explore our full digital menu below.
           </motion.p>

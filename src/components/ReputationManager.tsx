@@ -95,10 +95,10 @@ Suggestion: ${formData.suggestion || 'N/A'}`;
               Your Voice Matters • আপনার মতামত
             </span>
           </span>
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 leading-tight">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
             Share Your Experience
           </h2>
-          <p className="font-sans text-sm sm:text-base text-stone-900/85 font-semibold max-w-xl mx-auto">
+          <p className="font-sans text-sm sm:text-base text-white/90 font-semibold max-w-xl mx-auto">
             আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ
           </p>
         </div>

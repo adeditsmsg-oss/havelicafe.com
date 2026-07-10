@@ -69,15 +69,15 @@ export default function WhyChooseUs() {
           </span>
 
           {/* Heading */}
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 leading-tight">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
             Why Choose{' '}
-            <span className="underline decoration-stone-900/60 decoration-4 underline-offset-4">
+            <span className="underline decoration-white/60 decoration-4 underline-offset-4">
               Haveli?
             </span>
           </h2>
 
           {/* Description */}
-          <p className="font-sans text-sm sm:text-base text-stone-900/85 font-semibold max-w-xl mx-auto">
+          <p className="font-sans text-sm sm:text-base text-white/90 font-semibold max-w-xl mx-auto">
             More than just food — it&apos;s an experience. আমাদের কাছে এটা শুধু খাবার নয়, এটা একটা অভিজ্ঞতা।
           </p>
         </motion.div>

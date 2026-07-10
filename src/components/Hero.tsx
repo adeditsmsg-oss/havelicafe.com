@@ -46,7 +46,7 @@ export default function Hero() {
             {/* Cursive Calligraphy Heading (mapped to Dancing Script) */}
             <motion.h1 
               variants={itemVariants}
-              className="font-serif text-6xl sm:text-7xl md:text-8xl font-bold text-stone-900 tracking-wide leading-tight"
+              className="font-serif text-6xl sm:text-7xl md:text-8xl font-bold text-white tracking-wide leading-tight"
             >
               Haveli Cafe
             </motion.h1>
@@ -54,7 +54,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-stone-900/85 font-sans text-sm sm:text-base md:text-lg max-w-lg leading-relaxed font-semibold"
+              className="text-white/90 font-sans text-sm sm:text-base md:text-lg max-w-lg leading-relaxed font-semibold"
             >
               Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
             </motion.p>
