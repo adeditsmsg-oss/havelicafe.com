@@ -34,6 +34,9 @@ export default function Home() {
         {/* 3. Featured Dishes / Bestsellers */}
         <FeaturedDishes />
 
+        {/* 7. Complete Digital Menu */}
+        <DigitalMenu />
+
         {/* 4. About & Our Story */}
         <OurStory />
 
@@ -42,9 +45,6 @@ export default function Home() {
 
         {/* 6. Popular Menu Grid (NEW) */}
         <PopularMenu />
-
-        {/* 7. Complete Digital Menu */}
-        <DigitalMenu />
 
         {/* 8. Customer Favourites (NEW) */}
         <CustomerFavourites />
