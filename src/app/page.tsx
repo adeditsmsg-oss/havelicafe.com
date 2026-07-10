@@ -49,6 +49,9 @@ export default function Home() {
         {/* 8. Customer Favourites (NEW) */}
         <CustomerFavourites />
 
+        {/* 13. Google Review Reputation Management */}
+        <ReputationManager />
+
         {/* 9. Cafe Memories Gallery (using real images) */}
         <CafeMemories />
 
@@ -60,9 +63,6 @@ export default function Home() {
 
         {/* 11. Reservation Form */}
         <Reservation />
-
-        {/* 13. Google Review Reputation Management */}
-        <ReputationManager />
 
         {/* 14. Frequently Asked Questions */}
         <FAQ />
