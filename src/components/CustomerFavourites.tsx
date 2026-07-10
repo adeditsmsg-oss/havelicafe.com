@@ -92,66 +92,90 @@ export default function CustomerFavourites() {
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {favourites.map((item) => (
+        {/* 2-Column Grid Layout: Image on Left (col-span-5), Cards on Right (col-span-7) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left Column (col-span-5): Beautiful Eating Shawarma Graphic scaled by 120% */}
+          <div className="lg:col-span-5 flex justify-center items-center min-h-[300px] md:min-h-[420px]">
             <motion.div
-              key={item.name}
-              variants={cardVariants}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover-lift transition-all duration-300 border border-stone-100 flex flex-col justify-between"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1.2, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative w-full aspect-[4/5] max-w-[420px] pointer-events-none select-none lg:scale-120 rounded-3xl overflow-hidden shadow-2xl border border-white/10"
             >
-              <div>
-                {/* Image & Badge overlay */}
-                <div className="relative aspect-[4/3] w-full bg-stone-100">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <span className="absolute top-3 right-3 bg-brand-amber/95 text-stone-900 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full shadow-md backdrop-blur-sm">
-                    {item.badge}
-                  </span>
-                </div>
+              <Image
+                src="/images/transparent_eating_shawarma.jpg"
+                alt="Delicious Gourmet Chicken Shawarma"
+                fill
+                className="object-cover"
+                priority
+              />
+            </motion.div>
+          </div>
 
-                {/* Card Content */}
-                <div className="p-5">
-                  <h3 className="font-semibold text-stone-900 text-base md:text-lg mb-1 leading-snug">
-                    {item.name}
-                  </h3>
-                  
-                  {/* Rating Stars */}
-                  <div className="flex items-center gap-0.5 mb-2">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
-                    ))}
+          {/* Right Column (col-span-7): Cards Grid (2x2 on desktop) */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
+            {favourites.map((item) => (
+              <motion.div
+                key={item.name}
+                variants={cardVariants}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover-lift transition-all duration-300 border border-stone-100 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Image & Badge overlay */}
+                  <div className="relative aspect-[4/3] w-full bg-stone-100">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                    <span className="absolute top-3 right-3 bg-brand-amber/95 text-stone-900 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full shadow-md backdrop-blur-sm">
+                      {item.badge}
+                    </span>
                   </div>
 
-                  <p className="text-xs text-stone-600 font-semibold">
-                    {item.orderCount}
-                  </p>
-                </div>
-              </div>
+                  {/* Card Content */}
+                  <div className="p-5">
+                    <h3 className="font-semibold text-stone-900 text-base md:text-lg mb-1 leading-snug">
+                      {item.name}
+                    </h3>
+                    
+                    {/* Rating Stars */}
+                    <div className="flex items-center gap-0.5 mb-2">
+                      {[...Array(item.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
+                      ))}
+                    </div>
 
-              {/* Price row */}
-              <div className="px-5 pb-5 pt-3 border-t border-stone-100 dark:border-stone-700 flex items-center justify-between">
-                <span className="text-lg font-extrabold text-brand-amber">
-                  ₹{item.price}
-                </span>
-                <span className="text-xs text-stone-500 font-bold dark:text-stone-400">
-                  Delicious Choice
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                    <p className="text-xs text-stone-600 font-semibold">
+                      {item.orderCount}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Price row */}
+                <div className="px-5 pb-5 pt-3 border-t border-stone-100 dark:border-stone-700 flex items-center justify-between">
+                  <span className="text-lg font-extrabold text-brand-amber">
+                    ₹{item.price}
+                  </span>
+                  <span className="text-xs text-stone-500 font-bold dark:text-stone-400">
+                    Delicious Choice
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
