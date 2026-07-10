@@ -39,14 +39,14 @@ export default function Home() {
         {/* 4. About & Our Story */}
         <OurStory />
 
+        {/* 13. Google Review Reputation Management */}
+        <ReputationManager />
+
         {/* 6. Popular Menu Grid (NEW) */}
         <PopularMenu />
 
         {/* 8. Customer Favourites (NEW) */}
         <CustomerFavourites />
-
-        {/* 13. Google Review Reputation Management */}
-        <ReputationManager />
 
         {/* 9. Cafe Memories Gallery (using real images) */}
         <CafeMemories />
