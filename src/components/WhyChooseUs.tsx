@@ -107,10 +107,10 @@ export default function WhyChooseUs() {
                 <h4 className="font-sans font-bold text-xs text-stone-900/60 leading-none">
                   {feature.titleBn}
                 </h4>
-                <p className="font-sans text-xs sm:text-sm text-stone-800 leading-relaxed font-semibold pt-1">
+                <p className="font-sans text-xs sm:text-sm text-stone-700 leading-relaxed font-semibold pt-1">
                   {feature.descEn}
                 </p>
-                <p className="font-sans text-[11px] text-stone-500 leading-relaxed font-medium">
+                <p className="font-sans text-[11px] text-stone-600 leading-relaxed font-medium">
                   {feature.descBn}
                 </p>
               </div>
