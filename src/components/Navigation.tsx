@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
@@ -18,7 +18,28 @@ const NAV_LINKS = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [activeSection, setActiveSection] = useState('#home');
+
+  // Sync theme state with HTML class
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', prefersDark);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+  };
 
   /* ─── Scroll shadow ─── */
   useEffect(() => {
@@ -112,6 +133,14 @@ export default function Navigation() {
 
             {/* ── Desktop CTA ── */}
             <div className="hidden lg:flex items-center gap-3">
+              <button
+                onClick={toggleTheme}
+                className="p-2.5 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors cursor-pointer"
+                title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+                aria-label="Toggle Theme"
+              >
+                {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+              </button>
               <a
                 href="tel:+918248481654"
                 className="p-2.5 rounded-full bg-amber-50 text-amber-600 hover:bg-amber-100 transition-colors"
@@ -128,14 +157,24 @@ export default function Navigation() {
               </a>
             </div>
 
-            {/* ── Mobile Hamburger ── */}
-            <button
-              onClick={() => setIsOpen(true)}
-              className="lg:hidden p-2.5 rounded-xl text-stone-700 hover:bg-amber-50 transition-colors"
-              aria-label="Open navigation menu"
-            >
-              <Menu className="w-5 h-5" />
-            </button>
+            {/* ── Mobile Hamburger & Theme Toggle ── */}
+            <div className="flex lg:hidden items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className="p-2.5 rounded-xl text-stone-700 hover:bg-amber-50 transition-colors cursor-pointer"
+                title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+                aria-label="Toggle Theme"
+              >
+                {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setIsOpen(true)}
+                className="p-2.5 rounded-xl text-stone-700 hover:bg-amber-50 transition-colors"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </nav>
