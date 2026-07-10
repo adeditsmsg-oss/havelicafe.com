@@ -143,22 +143,7 @@ export default function FeaturedDishes() {
           ))}
         </div>
 
-        {/* View Full Menu Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-10"
-        >
-          <a
-            href="#menu"
-            className="inline-flex items-center gap-1.5 text-amber-600 hover:text-amber-700 font-semibold transition-colors"
-          >
-            View Full Menu
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </motion.div>
+
       </div>
     </section>
   );
