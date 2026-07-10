@@ -26,8 +26,8 @@
   --color-brand-muted: var(--brand-muted);
   --color-brand-border: var(--brand-border);
   --color-brand-burgundy: var(--brand-burgundy);
-  --font-serif: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-serif: var(--font-dancing), cursive, serif;
+  --font-sans: var(--font-opensans), system-ui, sans-serif;
 }
 
 body {

@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Dancing_Script, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { getLocalBusinessSchema, seoConfig } from "@/utils/seo";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const dancing = Dancing_Script({
+  variable: "--font-dancing",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "700"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const opensans = Open_Sans({
+  variable: "--font-opensans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -71,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${dancing.variable} ${opensans.variable} h-full antialiased`}
     >
       <head>
         <script
