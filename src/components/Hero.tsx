@@ -93,12 +93,12 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Column: Transparent Burger Platter (No background overlaps) */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[320px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[520px]">
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[320px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[580px]">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] max-w-[620px] pointer-events-none select-none"
+              className="relative w-full aspect-[16/10] max-w-[720px] pointer-events-none select-none lg:-mr-8"
             >
               <Image
                 src="/images/transparent_burger.png"
