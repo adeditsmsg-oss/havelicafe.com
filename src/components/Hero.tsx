@@ -33,12 +33,12 @@ export default function Hero() {
       {/* ── Content Container ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[75vh] md:min-h-[80vh]">
         
-        {/* Main Grid: Text on Left, Burger Platter on Right */}
+        {/* Main Grid: Text on Left (5 columns), Burger Platter on Right (7 columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
           
           {/* Left Column: Text & CTA */}
           <motion.div 
-            className="lg:col-span-6 flex flex-col items-start text-left space-y-6 z-10"
+            className="lg:col-span-5 flex flex-col items-start text-left space-y-6 z-10"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -74,13 +74,13 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Transparent Burger Platter (No background overlaps) */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-[320px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[580px]">
+          {/* Right Column: Transparent Burger Platter (Sized up to col-span-7 and max-w-[880px]) */}
+          <div className="lg:col-span-7 flex justify-center items-center relative min-h-[320px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[600px]">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1.05 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative w-full aspect-[16/10] max-w-[760px] pointer-events-none select-none lg:-mr-10"
+              className="relative w-full aspect-[16/10] max-w-[880px] pointer-events-none select-none lg:-mr-16 lg:scale-110"
             >
               <Image
                 src="/images/transparent_burger.png"
