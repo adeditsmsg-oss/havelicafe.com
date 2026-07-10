@@ -137,14 +137,6 @@ export default function FeaturedDishes() {
                   <span className="text-lg font-bold text-[#1C1917]">
                     ₹{item.price}
                   </span>
-                  <a
-                    href={getWhatsAppLink(item.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-amber-600 hover:text-amber-700 font-medium transition-colors"
-                  >
-                    Order on WhatsApp →
-                  </a>
                 </div>
               </div>
             </motion.div>
