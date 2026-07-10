@@ -33,10 +33,10 @@ function MarqueeContent() {
 export default function TrustBar() {
   return (
     <section
-      className="bg-gradient-to-r from-amber-500 to-amber-600 py-3 overflow-hidden"
+      className="bg-gradient-to-r from-amber-500 to-amber-600 py-1 overflow-hidden"
       aria-label="Trust highlights"
     >
-      <div className="animate-marquee text-white text-sm sm:text-base font-bold">
+      <div className="animate-marquee text-white text-xs font-bold">
         {/* Two copies for seamless loop */}
         <MarqueeContent />
         <MarqueeContent />
