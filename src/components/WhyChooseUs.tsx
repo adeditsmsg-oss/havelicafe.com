@@ -46,11 +46,13 @@ const cardVariants = {
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 md:py-24 bg-brand-cream relative overflow-hidden" id="why-us">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-brand-amber/5 blur-3xl -z-10" />
-
+    <section 
+      style={{ backgroundColor: '#F59E0B' }}
+      className="py-16 md:py-24 relative overflow-hidden" 
+      id="why-us"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,16 +61,23 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-14 space-y-4"
         >
-          <span className="font-sans font-bold text-xs uppercase tracking-widest text-brand-burgundy bg-brand-burgundy/5 px-4 py-1.5 rounded-full">
-            Our Specialty • আমাদের বিশেষত্ব
+          {/* Badge */}
+          <span>
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/20 border border-white/10 text-stone-900 text-xs md:text-sm font-bold backdrop-blur-sm">
+              Our Specialty • আমাদের বিশেষত্ব
+            </span>
           </span>
-          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-brand-burgundy leading-tight">
+
+          {/* Heading */}
+          <h2 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-stone-900 leading-tight">
             Why Choose{' '}
-            <span className="underline decoration-brand-amber/60 decoration-4 underline-offset-4">
+            <span className="underline decoration-stone-900/60 decoration-4 underline-offset-4">
               Haveli?
             </span>
           </h2>
-          <p className="font-sans text-sm sm:text-base text-brand-dark/70 font-semibold max-w-xl mx-auto">
+
+          {/* Description */}
+          <p className="font-sans text-sm sm:text-base text-stone-900/85 font-semibold max-w-xl mx-auto">
             More than just food — it&apos;s an experience. আমাদের কাছে এটা শুধু খাবার নয়, এটা একটা অভিজ্ঞতা।
           </p>
         </motion.div>
@@ -83,25 +92,25 @@ export default function WhyChooseUs() {
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
               custom={index}
-              className="bg-background rounded-3xl p-7 text-center shadow-sm hover:shadow-lg hover-lift transition-all border border-brand-border flex flex-col items-center space-y-4"
+              className="bg-white rounded-3xl p-7 text-center shadow-md hover:shadow-xl hover-lift transition-all border border-stone-100 flex flex-col items-center space-y-4"
             >
-              {/* Icon Container */}
-              <div className="w-14 h-14 bg-brand-amber rounded-2xl flex items-center justify-center shadow-md">
-                <feature.icon className="w-6 h-6 text-black" />
+              {/* Icon Container (High Legibility Dark Stone Background) */}
+              <div className="w-14 h-14 bg-stone-900 rounded-2xl flex items-center justify-center shadow-md">
+                <feature.icon className="w-6 h-6 text-brand-amber fill-brand-amber" />
               </div>
 
               {/* Content */}
               <div className="space-y-2">
-                <h3 className="font-serif font-bold text-lg text-brand-burgundy">
+                <h3 className="font-serif font-bold text-lg text-stone-900">
                   {feature.titleEn}
                 </h3>
-                <h4 className="font-sans font-bold text-xs text-brand-dark/60 leading-none">
+                <h4 className="font-sans font-bold text-xs text-stone-900/60 leading-none">
                   {feature.titleBn}
                 </h4>
-                <p className="font-sans text-xs sm:text-sm text-brand-dark/70 leading-relaxed font-medium pt-1">
+                <p className="font-sans text-xs sm:text-sm text-stone-800 leading-relaxed font-semibold pt-1">
                   {feature.descEn}
                 </p>
-                <p className="font-sans text-[11px] text-brand-dark/50 leading-relaxed font-medium">
+                <p className="font-sans text-[11px] text-stone-500 leading-relaxed font-medium">
                   {feature.descBn}
                 </p>
               </div>
