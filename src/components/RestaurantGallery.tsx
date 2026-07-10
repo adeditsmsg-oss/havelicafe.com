@@ -54,19 +54,25 @@ const cardVariants = {
 
 export default function RestaurantGallery() {
   return (
-    <section className="py-16 md:py-24 px-4 bg-brand-warm overflow-hidden" id="gallery">
+    <section 
+      style={{ backgroundColor: '#F59E0B' }}
+      className="py-16 md:py-24 px-4 overflow-hidden" 
+      id="gallery"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <span className="text-sm font-bold text-amber-600 bg-amber-50 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-3">
-            <Camera className="w-4 h-4" />
-            Virtual Tour
+          <span>
+            <span className="text-xs font-bold text-stone-900 bg-white/20 border border-white/10 px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-3 backdrop-blur-sm">
+              <Camera className="w-4 h-4" />
+              Virtual Tour
+            </span>
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1C1917] mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
             Step Inside Haveli
           </h2>
-          <div className="w-16 h-1 bg-amber-500 rounded-full mx-auto mb-4" />
-          <p className="font-sans text-stone-500 text-sm md:text-base max-w-lg mx-auto">
+          <div className="w-16 h-1 bg-white/60 rounded-full mx-auto mb-4" />
+          <p className="font-sans text-white/90 text-sm md:text-base max-w-lg mx-auto font-semibold">
             Take a visual tour of our rustic-modern interiors, hand-painted murals, and beautiful corners.
           </p>
         </div>
