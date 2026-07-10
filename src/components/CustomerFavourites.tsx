@@ -96,7 +96,7 @@ export default function CustomerFavourites() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column (col-span-5): Beautiful Eating Shawarma Graphic scaled down to 70% */}
-          <div className="lg:col-span-5 flex justify-center items-center min-h-[300px] md:min-h-[420px]">
+          <div className="lg:col-span-5 flex justify-center items-center min-h-[220px] md:min-h-[420px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.6, y: 30 }}
               whileInView={{ opacity: 1, scale: 0.7, y: 0 }}
@@ -114,19 +114,19 @@ export default function CustomerFavourites() {
             </motion.div>
           </div>
 
-          {/* Right Column (col-span-7): Cards Grid (2x2 on desktop) */}
+          {/* Right Column (col-span-7): Cards Grid (Horizontal scroll on mobile, 2x2 grid on desktop) */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
-            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6"
+            className="lg:col-span-7 flex overflow-x-auto gap-4 snap-x snap-mandatory no-scrollbar pb-4 lg:pb-0 lg:grid lg:grid-cols-2 lg:gap-6 lg:overflow-x-visible"
           >
             {favourites.map((item) => (
               <motion.div
                 key={item.name}
                 variants={cardVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover-lift transition-all duration-300 border border-stone-100 flex flex-col justify-between"
+                className="w-[145px] sm:w-[180px] lg:w-auto flex-shrink-0 snap-start bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover-lift transition-all duration-300 border border-stone-100 flex flex-col justify-between"
               >
                 <div>
                   {/* Image & Badge overlay */}
@@ -138,36 +138,36 @@ export default function CustomerFavourites() {
                       className="object-cover"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                    <span className="absolute top-3 right-3 bg-brand-amber/95 text-stone-900 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full shadow-md backdrop-blur-sm">
+                    <span className="absolute top-2 right-2 bg-brand-amber/95 text-stone-900 text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md backdrop-blur-sm">
                       {item.badge}
                     </span>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5">
-                    <h3 className="font-semibold text-stone-900 text-base md:text-lg mb-1 leading-snug">
+                  <div className="p-3 md:p-5">
+                    <h3 className="font-semibold text-stone-900 text-xs md:text-lg mb-0.5 md:mb-1 leading-snug">
                       {item.name}
                     </h3>
                     
                     {/* Rating Stars */}
-                    <div className="flex items-center gap-0.5 mb-2">
+                    <div className="flex items-center gap-0.5 mb-1 md:mb-2">
                       {[...Array(item.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
+                        <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-[#F59E0B] text-[#F59E0B]" />
                       ))}
                     </div>
 
-                    <p className="text-xs text-stone-600 font-semibold">
+                    <p className="text-[9px] md:text-xs text-stone-600 font-semibold">
                       {item.orderCount}
                     </p>
                   </div>
                 </div>
 
                 {/* Price row */}
-                <div className="px-5 pb-5 pt-3 border-t border-stone-100 dark:border-stone-700 flex items-center justify-between">
-                  <span className="text-lg font-extrabold text-brand-amber">
+                <div className="px-3 pb-3 pt-2 md:px-5 md:pb-5 md:pt-3 border-t border-stone-100 dark:border-stone-700 flex items-center justify-between">
+                  <span className="text-sm md:text-lg font-extrabold text-brand-amber">
                     ₹{item.price}
                   </span>
-                  <span className="text-xs text-stone-500 font-bold dark:text-stone-400">
+                  <span className="text-[9px] md:text-xs text-stone-500 font-bold dark:text-stone-400">
                     Delicious Choice
                   </span>
                 </div>
