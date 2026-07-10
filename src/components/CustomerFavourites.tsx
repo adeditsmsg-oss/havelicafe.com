@@ -66,19 +66,28 @@ const cardVariants = {
 
 export default function CustomerFavourites() {
   return (
-    <section className="py-16 md:py-24 px-4 bg-[#FFFBF0] overflow-hidden" id="favourites">
+    <section 
+      style={{
+        background: "linear-gradient(135deg, #ea580c 0%, #f59e0b 100%)",
+      }}
+      className="py-16 md:py-24 px-4 overflow-hidden" 
+      id="favourites"
+    >
       <div className="max-w-7xl mx-auto">
+        
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <span className="text-sm font-bold text-amber-600 bg-amber-50 px-3.5 py-1.5 rounded-full inline-flex items-center gap-1 mb-3">
-            <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
-            Guest Choice Awards
+          <span>
+            <span className="text-xs font-bold text-stone-900 bg-white/20 border border-white/10 px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 mb-3 backdrop-blur-sm">
+              <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
+              Guest Choice Awards
+            </span>
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1C1917] mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
             Customer Favourites
           </h2>
-          <div className="w-16 h-1 bg-amber-500 rounded-full mx-auto mb-4" />
-          <p className="font-sans text-stone-500 text-sm md:text-base max-w-lg mx-auto">
+          <div className="w-16 h-1 bg-white/60 rounded-full mx-auto mb-4" />
+          <p className="font-sans text-white/90 text-sm md:text-base max-w-lg mx-auto font-semibold">
             Based on 500+ reviews — these are the dishes our guests love and recommend the most!
           </p>
         </div>
@@ -121,22 +130,22 @@ export default function CustomerFavourites() {
                   {/* Rating Stars */}
                   <div className="flex items-center gap-0.5 mb-2">
                     {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
                     ))}
                   </div>
 
-                  <p className="text-xs text-stone-400 font-medium">
+                  <p className="text-xs text-stone-600 font-semibold">
                     {item.orderCount}
                   </p>
                 </div>
               </div>
 
               {/* Price row */}
-              <div className="px-5 pb-5 pt-3 border-t border-stone-50 flex items-center justify-between">
-                <span className="text-lg font-extrabold text-amber-600">
+              <div className="px-5 pb-5 pt-3 border-t border-stone-100 dark:border-stone-700 flex items-center justify-between">
+                <span className="text-lg font-extrabold text-brand-amber">
                   ₹{item.price}
                 </span>
-                <span className="text-xs text-brand-amber font-semibold">
+                <span className="text-xs text-stone-500 font-bold dark:text-stone-400">
                   Delicious Choice
                 </span>
               </div>
