@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section 
       style={{
-        background: "linear-gradient(135deg, #e65c00 0%, #ea580c 55%, #f5af19 100%)",
+        background: "linear-gradient(135deg, #ea580c 0%, #f59e0b 100%)",
       }}
       className="relative min-h-[95vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden" 
       id="home"
