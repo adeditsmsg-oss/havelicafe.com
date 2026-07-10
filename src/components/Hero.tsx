@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { ArrowRight, Star, Users, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -24,29 +23,22 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative min-h-[95vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 overflow-hidden bg-brand-amber" 
+      style={{
+        backgroundImage: "url('/images/burger_hero_bg.png')",
+        backgroundSize: 'contain',
+        backgroundPosition: 'center right',
+        backgroundRepeat: 'no-repeat',
+      }}
+      className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center pt-24 pb-16 bg-gradient-to-r from-[#e65c00] via-[#ea580c] to-[#f5af19]" 
       id="home"
     >
-      {/* ── Background Image (The uploaded burger platter with orange/yellow gradient background) ── */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/burger_hero_bg.png"
-          alt="Haveli Cafe Platter Background"
-          fill
-          priority
-          className="object-cover object-right md:object-center"
-        />
-        {/* Subtle overlay on mobile only for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-amber/40 via-transparent to-transparent md:hidden" />
-      </div>
-
       {/* ── Content Container ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[75vh] md:min-h-[80vh]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between min-h-[70vh] md:min-h-[80vh]">
         
         {/* Text Area (Aligned to the left empty space of the background image) */}
-        <div className="my-auto max-w-xl md:max-w-2xl text-left">
+        <div className="my-auto max-w-lg md:max-w-xl text-left bg-gradient-to-r from-[#e65c00]/90 to-transparent p-4 rounded-3xl md:bg-none">
           <motion.div 
-            className="flex flex-col items-start space-y-6"
+            className="flex flex-col items-start space-y-5"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -70,7 +62,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-stone-900/85 font-sans text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-semibold"
+              className="text-stone-900/85 font-sans text-sm sm:text-base md:text-lg leading-relaxed font-semibold max-w-sm"
             >
               Savour signature Chicken Shawarma, freshly brewed Coffee, Chinese specials, and mocktails in a rustic, artistic, and cozy setting right near Midnapore Railway Station.
             </motion.p>
@@ -92,7 +84,7 @@ export default function Hero() {
             {/* Pagination Dot Indicators */}
             <motion.div 
               variants={itemVariants}
-              className="flex items-center gap-2 pt-4"
+              className="flex items-center gap-2 pt-2"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-stone-900/20 transition-all" />
               <span className="w-6 h-2.5 rounded-full bg-stone-900 transition-all" />
